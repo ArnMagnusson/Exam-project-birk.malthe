@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://2udqploowfy0" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Plant.png" id="6_15bxj"]
 [ext_resource type="Texture2D" uid="uid://batsdudpd1j73" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Shadow.png" id="7_eu7h8"]
 [ext_resource type="Texture2D" uid="uid://dx6nieyjempde" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Shadow Plant.png" id="8_hgpxr"]
-[ext_resource type="FontFile" uid="uid://dottm7di01m3y" path="res://fonts/Jacquard_12/Jacquard12-Regular.ttf" id="9_2j8m3"]
+[ext_resource type="FontFile" uid="uid://c1ng3mtxhupmw" path="res://fonts/DungeonFont.ttf" id="9_afsnh"]
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="10_qw2pi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_no4rq"]
@@ -2317,7 +2317,7 @@ texture = ExtResource("6_15bxj")
 [sub_resource type="TileSet" id="TileSet_acdqv"]
 sources/0 = SubResource("TileSetAtlasSource_2aocl")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2(54, -12)
 
 [node name="tile canister" type="Node2D" parent="."]
@@ -2352,13 +2352,15 @@ offset_bottom = 206.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = -137.0
-offset_top = 11.0
-offset_right = 339.0
-offset_bottom = 102.0
-theme_override_fonts/font = ExtResource("9_2j8m3")
+offset_left = -178.0
+offset_top = 14.0
+offset_right = 298.0
+offset_bottom = 105.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_afsnh")
 theme_override_font_sizes/font_size = 50
-text = "Ding dong"
+text = "Dungeon Hero"
 
 [node name="sun" type="DirectionalLight2D" parent="."]
 energy = 0.4
