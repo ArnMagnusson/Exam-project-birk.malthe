@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4hyd7xdmi2bg"]
+
+[ext_resource type="Script" path="res://scripts/playerscripts/movement_controller.gd" id="1_bs5m7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibmfg"]
+
+[node name="playercanister" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_bs5m7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_ibmfg")
