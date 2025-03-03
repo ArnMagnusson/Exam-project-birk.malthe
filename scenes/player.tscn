@@ -1,11 +1,171 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4hyd7xdmi2bg"]
+[gd_scene load_steps=38 format=3 uid="uid://d4hyd7xdmi2bg"]
 
 [ext_resource type="Script" path="res://scripts/playerscripts/movement_controller.gd" id="1_bs5m7"]
+[ext_resource type="Texture2D" uid="uid://b80j52k04w4ma" path="res://Character textures/glaive warrior!/Idle/pixil-frame-0.png" id="2_clk68"]
+[ext_resource type="Texture2D" uid="uid://blhisbpvddvfe" path="res://Character textures/glaive warrior!/Idle/pixil-frame-1.png" id="3_rj5w1"]
+[ext_resource type="Texture2D" uid="uid://ec5dw8rqdbfo" path="res://Character textures/glaive warrior!/Idle/pixil-frame-2.png" id="4_55xai"]
+[ext_resource type="Texture2D" uid="uid://itfl57hl3nl2" path="res://Character textures/glaive warrior!/Idle/pixil-frame-3.png" id="5_37atw"]
+[ext_resource type="Texture2D" uid="uid://de0adp4qescnf" path="res://Character textures/glaive warrior!/Run/pixil-frame-0.png" id="6_fo3s6"]
+[ext_resource type="Texture2D" uid="uid://brlttow67jjco" path="res://Character textures/glaive warrior!/Run/pixil-frame-1.png" id="7_552df"]
+[ext_resource type="Texture2D" uid="uid://dvya73i28mbcg" path="res://Character textures/glaive warrior!/Run/pixil-frame-2.png" id="8_5y1pl"]
+[ext_resource type="Texture2D" uid="uid://mkw1onba4smg" path="res://Character textures/glaive warrior!/Run/pixil-frame-3.png" id="9_qx2p2"]
+[ext_resource type="Texture2D" uid="uid://c0k65rwcj3gg4" path="res://Character textures/glaive warrior!/Run/pixil-frame-4.png" id="10_pwwm7"]
+[ext_resource type="Texture2D" uid="uid://dglej5k8i0ggf" path="res://Character textures/glaive warrior!/Run/pixil-frame-5.png" id="11_qcbdm"]
+[ext_resource type="Texture2D" uid="uid://dkirwaeqj2ao8" path="res://Character textures/glaive warrior!/Slash/pixil-frame-0.png" id="12_rkvov"]
+[ext_resource type="Texture2D" uid="uid://b15sgu8s0srxo" path="res://Character textures/glaive warrior!/Slash/pixil-frame-1.png" id="13_5vp86"]
+[ext_resource type="Texture2D" uid="uid://bldj31gv1bqv" path="res://Character textures/glaive warrior!/Slash/pixil-frame-2.png" id="14_bbna3"]
+[ext_resource type="Texture2D" uid="uid://bm6s00h8q05l0" path="res://Character textures/glaive warrior!/Slash/pixil-frame-3.png" id="15_gcg1l"]
+[ext_resource type="Texture2D" uid="uid://y6crtrnbjjpe" path="res://Character textures/glaive warrior!/Slash/pixil-frame-4.png" id="16_6i0p2"]
+[ext_resource type="Texture2D" uid="uid://cv67od1ellrm0" path="res://Character textures/glaive warrior!/Slash/pixil-frame-5.png" id="17_2lbwv"]
+[ext_resource type="Texture2D" uid="uid://cafbdeuq5wy1b" path="res://Character textures/glaive warrior!/Slash/pixil-frame-6.png" id="18_vovg6"]
+[ext_resource type="Texture2D" uid="uid://b0rn5d7yna225" path="res://Character textures/glaive warrior!/Slash/pixil-frame-7.png" id="19_nxiny"]
+[ext_resource type="Texture2D" uid="uid://d2mc717pnrvqu" path="res://Character textures/glaive warrior!/Slash/pixil-frame-8.png" id="20_d0pk6"]
+[ext_resource type="Texture2D" uid="uid://cqu170uly7usm" path="res://Character textures/glaive warrior!/Slash/pixil-frame-9.png" id="21_hipr3"]
+[ext_resource type="Texture2D" uid="uid://dhn3fgiddq5tc" path="res://Character textures/glaive warrior!/Slash/pixil-frame-10.png" id="22_jsm1o"]
+[ext_resource type="Texture2D" uid="uid://dnlayrmvmg6vk" path="res://Character textures/glaive warrior!/Slash/pixil-frame-11.png" id="23_8e8o2"]
+[ext_resource type="Texture2D" uid="uid://bqldmcu1psi6r" path="res://Character textures/glaive warrior!/Slash/pixil-frame-12.png" id="24_e21i0"]
+[ext_resource type="Texture2D" uid="uid://cxtaqxtymu75i" path="res://Character textures/glaive warrior!/Slash/pixil-frame-13.png" id="25_frgqs"]
+[ext_resource type="Texture2D" uid="uid://cs601rcmfyuo7" path="res://Character textures/glaive warrior!/Slash/pixil-frame-14.png" id="26_f23xl"]
+[ext_resource type="Texture2D" uid="uid://colg1huaqq7cv" path="res://Character textures/glaive warrior!/Slash/pixil-frame-15.png" id="27_cudql"]
+[ext_resource type="Texture2D" uid="uid://5x66uc4so1m3" path="res://Character textures/glaive warrior!/Slash/pixil-frame-16.png" id="28_6hnlb"]
+[ext_resource type="Texture2D" uid="uid://br4lgeavke8wt" path="res://Character textures/glaive warrior!/Slash/VFX/lunge/pixil-frame-0.png" id="29_jvpat"]
+[ext_resource type="Texture2D" uid="uid://buxu505jy57wf" path="res://Character textures/glaive warrior!/Slash/VFX/lunge/pixil-frame-1.png" id="30_tdcnr"]
+[ext_resource type="Texture2D" uid="uid://chbot2a0m3bmk" path="res://Character textures/glaive warrior!/Slash/VFX/lunge/pixil-frame-2.png" id="31_gk435"]
+[ext_resource type="Texture2D" uid="uid://b2jfcby6qgwoo" path="res://Character textures/glaive warrior!/Slash/VFX/wide_slash/pixil-frame-0.png" id="32_82mgo"]
+[ext_resource type="Texture2D" uid="uid://bt2wodha14r0i" path="res://Character textures/glaive warrior!/Slash/VFX/wide_slash/pixil-frame-1.png" id="33_yp8ml"]
+[ext_resource type="Texture2D" uid="uid://bf0w52w5iqoi5" path="res://Character textures/glaive warrior!/Slash/VFX/wide_slash/pixil-frame-2.png" id="34_3torl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibmfg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6fr2"]
-animations = []
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_clk68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rj5w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_55xai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_37atw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_fo3s6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_552df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5y1pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qx2p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pwwm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qcbdm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_rkvov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5vp86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bbna3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gcg1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6i0p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2lbwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vovg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nxiny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_d0pk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hipr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jsm1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_8e8o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_e21i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_frgqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_f23xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cudql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6hnlb")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 13.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jprpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_jvpat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_tdcnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_gk435")
+}],
+"loop": false,
+"name": &"lunge",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_82mgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_yp8ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_3torl")
+}],
+"loop": true,
+"name": &"slash",
+"speed": 16.0
+}]
 
 [node name="playercanister" type="Node2D"]
 
@@ -16,6 +176,14 @@ script = ExtResource("1_bs5m7")
 position = Vector2(-4, -2)
 shape = SubResource("CapsuleShape2D_ibmfg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="james" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_o6fr2")
-animation = &""
+animation = &"run"
+autoplay = "idle"
+
+[node name="jamesvfx" type="AnimatedSprite2D" parent="CharacterBody2D/james"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_jprpj")
+animation = &"lunge"
+
+[connection signal="animation_finished" from="CharacterBody2D/james" to="CharacterBody2D" method="_on_james_animation_finished"]
