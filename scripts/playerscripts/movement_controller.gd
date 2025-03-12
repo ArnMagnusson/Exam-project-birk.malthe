@@ -1,24 +1,35 @@
 extends CharacterBody2D
 
-@export var speed = 20
+#general stats
+@export var speed = 40
 @export var gold_multiplier = 0
 @export var gold = 0
 @export var damage = 1
 @export var health = 3
 @export var dash_speed = 40
 
+#stats
+@export var fortitude = 1
+@export var strength = 1
+@export var constitution = 1
+
+
 func _ready():
 	pass
 	
-func _process(delta):
+func _process(delta):	
 	var direction = Input.get_axis("left", "right") #venstre - value højre + value
 	var vertical_direction = Input.get_axis("up", "down")
+	
 	attack()
 	if direction:
 		velocity.x = direction * speed
+		if direction > 0:
+			$Sprite2D.flip_h = false
+		elif direction < 0:
+			$Sprite2D.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-	
 	if vertical_direction:
 		velocity.y = vertical_direction * speed
 	else:
@@ -28,9 +39,7 @@ func _process(delta):
 func attack():
 	if Input.is_action_just_pressed("left_click"):
 		print("slash")
-		$james.play("slash")  # Play the slash animation
-		$james/jamesvfx.play("lunge")  # Play the lunge VFX animation
-		$james/jamesvfx.show()  # Make sure the VFX is visible
+		$AnimationPlayer.play("attack")
 
 		
 func death():

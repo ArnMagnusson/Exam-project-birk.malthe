@@ -2318,7 +2318,6 @@ texture = ExtResource("6_15bxj")
 sources/0 = SubResource("TileSetAtlasSource_2aocl")
 
 [node name="Node2D2" type="Node2D"]
-position = Vector2(54, -12)
 
 [node name="tile canister" type="Node2D" parent="."]
 
