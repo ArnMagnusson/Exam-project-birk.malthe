@@ -34,6 +34,7 @@ func _process(delta):
 		velocity.y = vertical_direction * speed
 	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
+		
 	move_and_slide()
 	
 func attack():
