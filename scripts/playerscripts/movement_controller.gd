@@ -20,7 +20,7 @@ func _ready():
 func _process(delta):	
 	var direction = Input.get_axis("left", "right") #venstre - value højre + value
 	var vertical_direction = Input.get_axis("up", "down")
-	
+	player_health()
 	attack()
 	if direction:
 		velocity.x = direction * speed
@@ -55,6 +55,9 @@ func inventory():
 	pass
 
 func perks():
+	pass
+	
+func player_health():
 	pass
 
 func debugkey():

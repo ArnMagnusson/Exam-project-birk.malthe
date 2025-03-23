@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bybx6a68tl6hc" path="res://Character textures/glaive warrior!/glaivespritesheets/idlespritesheet.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://ckuc5fjrwq6st" path="res://Character textures/glaive warrior!/glaivespritesheets/glaiv warrior attack sprite sheet.png" id="35_bj30b"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibmfg"]
-
 [sub_resource type="Animation" id="Animation_t4otl"]
 length = 0.001
 tracks/0/type = "value"
@@ -266,22 +264,26 @@ _data = {
 &"player": SubResource("Animation_jc3p3")
 }
 
-[node name="playercanister" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibmfg"]
+
+[node name="playercanister" type="Node2D" groups=["Player"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_bs5m7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-4, -2)
-shape = SubResource("CapsuleShape2D_ibmfg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(0, -2)
 texture = ExtResource("35_bj30b")
 hframes = 17
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" groups=["Player"]]
 root_node = NodePath("../Sprite2D")
 libraries = {
 &"": SubResource("AnimationLibrary_j2b1d")
 }
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(-4, -2)
+shape = SubResource("CapsuleShape2D_ibmfg")
