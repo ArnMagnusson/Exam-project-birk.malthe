@@ -26,8 +26,10 @@ func _process(delta):
 		velocity.x = direction * speed
 		if direction > 0:
 			$Sprite2D.flip_h = false
+			$AnimationPlayer.play("Run")
 		elif direction < 0:
 			$Sprite2D.flip_h = true
+			$AnimationPlayer.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	if vertical_direction:
