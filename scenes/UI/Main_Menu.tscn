@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dcy6mj8x4tky7"]
+[gd_scene load_steps=27 format=4 uid="uid://dcy6mj8x4tky7"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_p0bvg"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_ypapd"]
@@ -2317,6 +2317,8 @@ texture = ExtResource("6_15bxj")
 [sub_resource type="TileSet" id="TileSet_acdqv"]
 sources/0 = SubResource("TileSetAtlasSource_2aocl")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7bi6"]
+
 [node name="Node2D2" type="Node2D"]
 
 [node name="tile canister" type="Node2D" parent="."]
@@ -2374,3 +2376,10 @@ zoom = Vector2(3, 3)
 
 [node name="playercanister" parent="." instance=ExtResource("10_3ufil")]
 position = Vector2(548, 356)
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemies"]]
+position = Vector2(652, 363)
+scale = Vector2(4.78569, 4.84139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemies"]]
+shape = SubResource("CircleShape2D_f7bi6")

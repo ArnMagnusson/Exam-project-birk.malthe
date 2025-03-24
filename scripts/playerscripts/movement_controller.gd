@@ -20,22 +20,24 @@ func _ready():
 func _process(delta):	
 	var direction = Input.get_axis("left", "right") #venstre - value højre + value
 	var vertical_direction = Input.get_axis("up", "down")
-	
+	player_health()
 	attack()
 	if direction:
 		velocity.x = direction * speed
 		if direction > 0:
 			$Sprite2D.flip_h = false
+			$AnimationPlayer.play("Run")
 		elif direction < 0:
 			$Sprite2D.flip_h = true
+			$AnimationPlayer.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	if vertical_direction:
 		velocity.y = vertical_direction * speed
 	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
-		
 	move_and_slide()
+	
 	
 func attack():
 	if Input.is_action_just_pressed("left_click"):
@@ -53,6 +55,9 @@ func inventory():
 	pass
 
 func perks():
+	pass
+	
+func player_health():
 	pass
 
 func debugkey():
