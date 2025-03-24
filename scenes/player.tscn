@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4hyd7xdmi2bg"]
+[gd_scene load_steps=13 format=3 uid="uid://d4hyd7xdmi2bg"]
 
 [ext_resource type="Script" uid="uid://7bvqack2dey8" path="res://scripts/playerscripts/movement_controller.gd" id="1_bs5m7"]
 [ext_resource type="Texture2D" uid="uid://c8ivrf6tk0i0c" path="res://Character textures/glaive warrior!/glaivespritesheets/runanimation.png" id="3_dqkch"]
@@ -265,6 +265,10 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibmfg"]
+radius = 13.0
+height = 38.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 
 [node name="playercanister" type="Node2D" groups=["Player"]]
 
@@ -282,8 +286,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_j2b1d")
 }
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(-4, -2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1, -1)
+scale = Vector2(1.16, 1)
 shape = SubResource("CapsuleShape2D_ibmfg")
+
+[node name="Enemyhit" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Enemyhit"]
+shape = SubResource("CapsuleShape2D_dqkch")
+debug_color = Color(0.821405, 0, 0.200992, 0.419608)
