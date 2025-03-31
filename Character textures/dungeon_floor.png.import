@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://daujbpeev351y"
-path="res://.godot/imported/dungeon_floor.png-6c365c21eaaa935e21baaeeb6a50884c.ctex"
+path="res://.godot/imported/dungeon_floor.png-205f7326640c7dac6bacb317383d623e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dungeon Free/dungeon_floor.png"
-dest_files=["res://.godot/imported/dungeon_floor.png-6c365c21eaaa935e21baaeeb6a50884c.ctex"]
+source_file="res://Character textures/dungeon_floor.png"
+dest_files=["res://.godot/imported/dungeon_floor.png-205f7326640c7dac6bacb317383d623e.ctex"]
 
 [params]
 
