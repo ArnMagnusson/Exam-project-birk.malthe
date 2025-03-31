@@ -514,7 +514,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../WeaponDetection/Lungedetection/lungedetectionshape:visible")
+tracks/17/path = NodePath("../WeaponDetection/Lungedetection/lungedetectionshape:disabled")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -526,7 +526,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../WeaponDetection/slashdetection/slashdetectioncolish:visible")
+tracks/18/path = NodePath("../WeaponDetection/slashdetection/slashdetectioncolish:disabled")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -629,7 +629,7 @@ libraries = {
 }
 speed_scale = 0.5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="bodycollision" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)
 scale = Vector2(1.16, 1)
 shape = SubResource("CapsuleShape2D_ibmfg")
@@ -656,20 +656,25 @@ frame = 1
 [node name="WeaponDetection" type="Node2D" parent="."]
 
 [node name="Lungedetection" type="Area2D" parent="WeaponDetection"]
+collision_layer = 8
+collision_mask = 8
 
 [node name="lungedetectionshape" type="CollisionShape2D" parent="WeaponDetection/Lungedetection"]
 position = Vector2(32, -5.5)
 shape = SubResource("RectangleShape2D_smehm")
-debug_color = Color(0, 1, 0, 0.4)
+disabled = true
+debug_color = Color(0.253675, 0.949074, 0.82415, 0.4)
 
 [node name="slashdetection" type="Area2D" parent="WeaponDetection"]
 position = Vector2(6, 2)
 scale = Vector2(5.88, 3.6)
+collision_layer = 8
+collision_mask = 8
 
 [node name="slashdetectioncolish" type="CollisionShape2D" parent="WeaponDetection/slashdetection"]
 shape = SubResource("CircleShape2D_ur7pv")
+disabled = true
 debug_color = Color(0.776471, 1, 0, 0.419608)
 
-[connection signal="area_entered" from="Enemyhit" to="." method="_on_enemyhit_area_entered"]
-[connection signal="area_entered" from="WeaponDetection/Lungedetection" to="." method="_on_lungedetection_area_entered"]
-[connection signal="area_entered" from="WeaponDetection/slashdetection" to="." method="_on_slashdetection_area_entered"]
+[connection signal="body_entered" from="WeaponDetection/Lungedetection" to="." method="_on_lungedetection_body_entered"]
+[connection signal="body_entered" from="WeaponDetection/slashdetection" to="." method="_on_slashdetection_body_entered"]
