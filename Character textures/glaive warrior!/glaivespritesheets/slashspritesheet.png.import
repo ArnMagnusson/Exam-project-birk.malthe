@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3xtgxxfeutb7"
-path="res://.godot/imported/idlespritesheet.png-55eb08a291f86a64f5b20ddf71ffd271.ctex"
+uid="uid://em8e5d4quqy6"
+path="res://.godot/imported/slashspritesheet.png-8ad47e015e85d17b324f4082fc94fec1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character textures/glaive warrior!/glaivespritesheets/idlespritesheet.png"
-dest_files=["res://.godot/imported/idlespritesheet.png-55eb08a291f86a64f5b20ddf71ffd271.ctex"]
+source_file="res://Character textures/glaive warrior!/glaivespritesheets/slashspritesheet.png"
+dest_files=["res://.godot/imported/slashspritesheet.png-8ad47e015e85d17b324f4082fc94fec1.ctex"]
 
 [params]
 
