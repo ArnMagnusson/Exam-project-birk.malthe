@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 #general stats
+@onready var enemyhit = $Enemyhit
 @export var speed = 40
 @export var gold_multiplier = 0
 @export var gold = 0
-@export var damage = 1
 @export var health = 3
 @export var dash_speed = 40
+@export var LungeDMG = 3
+@export var SlashDMG = 1
 
 #stats
 @export var fortitude = 1
@@ -36,15 +38,17 @@ func _process(delta):
 		velocity.y = vertical_direction * speed
 	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
+		
+	if direction == 0:
+		if $AnimationPlayer.current_animation != "attack":
+			$AnimationPlayer.play("idle")
 	move_and_slide()
-	
 	
 func attack():
 	if Input.is_action_just_pressed("left_click"):
 		print("slash")
 		$AnimationPlayer.play("attack")
 
-		
 func death():
 	pass
 	
@@ -61,4 +65,26 @@ func player_health():
 	pass
 
 func debugkey():
+	pass #My debug function for key. I love it.
+
+
+
+func _on_enemyhit_area_entered(area): #Enemy hit player
+	if area.is_in_group("Enemies"): #checks if area that hit player is in group Enemies
+		print("Ooff")
+		if area.has_method("get_damage"):
+			var damage= area.get_damage()
+			#var damage_type = area.get_damage_type() If we need it further in.
+			health -= damage
+			Take_damage()
+			
+func Take_damage():
+	health <= 0
+	print("Damage taken")
+	death()
+
+func _on_lungedetection_area_entered(area): #lunge
+	print("lungedetected")
+
+func _on_slashdetection_area_entered(area): #slash
 	pass

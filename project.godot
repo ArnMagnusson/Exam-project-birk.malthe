@@ -23,8 +23,8 @@ window/vsync/vsync_mode=0
 
 [global_group]
 
-Enemies=""
 Player=""
+Enemies=""
 
 [input]
 
