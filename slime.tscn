@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://0wrqqa5b6jjo"]
+[gd_scene load_steps=8 format=3 uid="uid://0wrqqa5b6jjo"]
 
 [ext_resource type="Texture2D" uid="uid://bf2mmb4s6ykxf" path="res://enemies/blue_slime.png" id="1_2d52u"]
 [ext_resource type="Script" path="res://slime.gd" id="1_5jc4t"]
-[ext_resource type="Script" uid="uid://b1181ifkdu0k5" path="res://inflict_damage_handler.gd" id="3_4l1t8"]
 
 [sub_resource type="Animation" id="Animation_4l1t8"]
 length = 0.001
@@ -170,6 +169,3 @@ shape = SubResource("CircleShape2D_jayke")
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_4l1t8")
 debug_color = Color(0.923512, 0.275891, 0, 0.42)
-
-[node name="Inflict damage handler" type="Node2D" parent="."]
-script = ExtResource("3_4l1t8")

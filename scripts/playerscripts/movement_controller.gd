@@ -84,7 +84,7 @@ func Take_damage():
 	death()
 
 func _on_lungedetection_area_entered(area): #lunge
-	pass # Replace with function body.
+	print("lungedetected")
 
 func _on_slashdetection_area_entered(area): #slash
-	pass # Replace with function body.
+	pass
