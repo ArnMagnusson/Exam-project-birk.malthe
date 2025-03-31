@@ -78,12 +78,12 @@ func _on_enemyhit_area_entered(area): #Enemy hit player
 			#var damage_type = area.get_damage_type() If we need it further in.
 			health -= damage
 			Take_damage()
-			
+#damage function
 func Take_damage():
 	health <= 0
 	print("Damage taken")
 	death()
-
+#lunge and slash detection
 func _on_lungedetection_area_entered(area): #lunge
 	pass
 
