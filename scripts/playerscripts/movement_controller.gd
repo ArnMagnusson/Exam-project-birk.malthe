@@ -50,7 +50,8 @@ func attack():
 		$AnimationPlayer.play("attack")
 
 func death():
-	pass
+	print("dead")
+	queue_free()
 	
 func dash():
 	pass
