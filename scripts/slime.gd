@@ -18,3 +18,12 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	player = null
+
+func take_damage(damage_ammount):
+	print("damage taken", health)
+	health -=damage_ammount
+	if health <= 0:
+		death()
+
+func death():
+	queue_free()

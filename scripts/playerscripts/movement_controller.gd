@@ -105,7 +105,6 @@ func _on_lungedetection_body_entered(body):
 	print("body detected") #Prints if body is detected
 	if body.has_method("take_damage"): #checks if body has take_damage function
 		body.take_damage(LungeDMG) #calls take_damage function. PS you can do this, wish i knew sooner.
-	
 #check notes above
 func _on_slashdetection_body_entered(body):
 	print("body detected")
