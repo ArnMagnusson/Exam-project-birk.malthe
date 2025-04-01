@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bpio2w1fylaei" path="res://scenes/training_dummy.tscn" id="9_5hkpn"]
 [ext_resource type="FontFile" uid="uid://c1ng3mtxhupmw" path="res://fonts/DungeonFont.ttf" id="9_afsnh"]
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="10_3ufil"]
-[ext_resource type="PackedScene" uid="uid://bivg8pt1jqcq" path="res://scenes/base_pickup/Base_pickup.tscn" id="11_a1guq"]
+[ext_resource type="PackedScene" uid="uid://bmnnsys10mvbb" path="res://scenes/slime.tscn" id="11_a1guq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_no4rq"]
 texture = ExtResource("1_p0bvg")
@@ -2380,5 +2380,5 @@ zoom = Vector2(3, 3)
 [node name="playercanister" parent="." instance=ExtResource("10_3ufil")]
 position = Vector2(548, 356)
 
-[node name="Node2D" parent="." instance=ExtResource("11_a1guq")]
-position = Vector2(390, 390)
+[node name="slime" parent="." instance=ExtResource("11_a1guq")]
+position = Vector2(744, 200)
