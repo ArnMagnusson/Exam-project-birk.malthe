@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
-#general stats
 @onready var enemyhit = $Enemyhit
+
+#general stats
 @export var speed = 40
-@export var gold_multiplier = 0
 @export var gold = 0
-@export var health = 3
 @export var dash_speed = 40
 @export var LungeDMG = 3
 @export var SlashDMG = 1
@@ -14,23 +13,41 @@ extends CharacterBody2D
 @export var fortitude = 1
 @export var strength = 1
 @export var constitution = 1
+@export var health = 3
+@export var gold_multiplier = 0
 
+#Animation
+@onready var VFXL = $"VFX container/VFXLunge"
+@onready var VFXS = $"VFX container/VFXslash"
+
+#attack stuff
+var attacking = false
+@onready var LungeDetect = $WeaponDetection/Lungedetection/lungedetectionshape
+@onready var SlashDetect = $WeaponDetection/slashdetection/slashdetectioncolish
 
 func _ready():
-	pass
-	
-func _process(delta):	
+	VFXL.hide()
+	VFXS.hide()
+	LungeDetect.set_deferred("disabled", true)
+	SlashDetect.set_deferred("disabled", true)
+func _process(delta):
 	var direction = Input.get_axis("left", "right") #venstre - value højre + value
 	var vertical_direction = Input.get_axis("up", "down")
 	player_health()
 	attack()
+	debugkey()
+	
 	if direction:
 		velocity.x = direction * speed
 		if direction > 0:
 			$Sprite2D.flip_h = false
+			VFXL.flip_h = false
+			VFXS.flip_h = false
 			$AnimationPlayer.play("Run")
 		elif direction < 0:
 			$Sprite2D.flip_h = true
+			VFXL.flip_h = true
+			VFXS.flip_h = true
 			$AnimationPlayer.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
@@ -45,12 +62,19 @@ func _process(delta):
 	move_and_slide()
 	
 func attack():
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_just_pressed("left_click") and $AnimationPlayer.current_animation !="Run":
 		print("slash")
 		$AnimationPlayer.play("attack")
-
+		attacking = true
+	
+	if $AnimationPlayer.current_animation != "attack":
+		attacking = false
+		LungeDetect.set_deferred("disabled", true)
+		SlashDetect.set_deferred("disabled", true)
+		
 func death():
-	pass
+	print("dead")
+	queue_free()
 	
 func dash():
 	pass
@@ -63,28 +87,27 @@ func perks():
 	
 func player_health():
 	pass
-
+	
+#My debug function for key. I love it.
 func debugkey():
-	pass #My debug function for key. I love it.
+	if Input.is_action_just_pressed("debug"):
+		print(attacking) 
 
-
-
-func _on_enemyhit_area_entered(area): #Enemy hit player
-	if area.is_in_group("Enemies"): #checks if area that hit player is in group Enemies
-		print("Ooff")
-		if area.has_method("get_damage"):
-			var damage= area.get_damage()
-			#var damage_type = area.get_damage_type() If we need it further in.
-			health -= damage
-			Take_damage()
-			
-func Take_damage():
+#damage function
+func take_damage(damage_amount):
+	health -= damage_amount
 	health <= 0
 	print("Damage taken")
 	death()
-
-func _on_lungedetection_area_entered(area): #lunge
-	print("lungedetected")
-
-func _on_slashdetection_area_entered(area): #slash
-	pass
+	
+#lunge and slash detection
+func _on_lungedetection_body_entered(body):
+	print("body detected") #Prints if body is detected
+	if body.has_method("take_damage"): #checks if body has take_damage function
+		body.take_damage(LungeDMG) #calls take_damage function. PS you can do this, wish i knew sooner.
+	
+#check notes above
+func _on_slashdetection_body_entered(body):
+	print("body detected")
+	if body.has_method("take_damage"):
+		body.take_damage(SlashDMG)

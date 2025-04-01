@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bivg8pt1jqcq"]
+
+[ext_resource type="Script" uid="uid://bte1kvpla0its" path="res://scenes/base_pickup/base_pickup.gd" id="1_ylhuf"]
+[ext_resource type="Texture2D" uid="uid://d0j1ucjgknd4u" path="res://powerups textures/strup.png" id="2_y0r5v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2v03"]
+radius = 14.0357
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ylhuf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y0r5v")
+
+[node name="pickup_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickup_area"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_r2v03")
+
+[connection signal="area_entered" from="pickup_area" to="." method="_on_pickup_area_area_entered"]
