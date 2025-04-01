@@ -138,15 +138,16 @@ _data = {
 &"slime_walk": SubResource("Animation_5jc4t")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jayke"]
-radius = 11.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_4l1t8"]
 radius = 11.0454
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p2gj0"]
+radius = 162.012
 
 [node name="Node2D" type="Node2D" groups=["Enemies"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, -8)
 script = ExtResource("1_p2gj0")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -159,13 +160,20 @@ libraries = {
 &"": SubResource("AnimationLibrary_ppcr1")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_jayke")
-
 [node name="hit_detection" type="Area2D" parent="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/hit_detection"]
-position = Vector2(0, 2)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_4l1t8")
 debug_color = Color(0.923512, 0.275891, 0, 0.42)
+
+[node name="detection_area" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/detection_area"]
+shape = SubResource("CircleShape2D_p2gj0")
+debug_color = Color(1.03481e-06, 0.646434, 0.237131, 0.42)
+
+[connection signal="body_entered" from="CharacterBody2D/detection_area" to="CharacterBody2D" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/detection_area" to="CharacterBody2D" method="_on_detection_area_body_exited"]

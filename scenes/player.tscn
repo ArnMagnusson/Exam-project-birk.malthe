@@ -616,6 +616,7 @@ size = Vector2(50, 11)
 [node name="playercanister" type="Node2D" groups=["Player"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 3
 script = ExtResource("1_bs5m7")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -636,6 +637,7 @@ scale = Vector2(1.16, 1)
 shape = SubResource("CapsuleShape2D_ibmfg")
 
 [node name="Enemyhit" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Enemyhit"]
 position = Vector2(-1, -1)
