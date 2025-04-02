@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://2udqploowfy0" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Plant.png" id="6_15bxj"]
 [ext_resource type="Texture2D" uid="uid://batsdudpd1j73" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Shadow.png" id="7_eu7h8"]
 [ext_resource type="Texture2D" uid="uid://dx6nieyjempde" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Shadow Plant.png" id="8_hgpxr"]
-[ext_resource type="PackedScene" uid="uid://bpio2w1fylaei" path="res://scenes/training_dummy.tscn" id="9_5hkpn"]
 [ext_resource type="FontFile" uid="uid://c1ng3mtxhupmw" path="res://fonts/DungeonFont.ttf" id="9_afsnh"]
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="10_3ufil"]
-[ext_resource type="PackedScene" uid="uid://bmnnsys10mvbb" path="res://scenes/slime.tscn" id="11_a1guq"]
+[ext_resource type="PackedScene" uid="uid://bivg8pt1jqcq" path="res://scenes/base_pickup/Base_pickup.tscn" id="11_a1guq"]
+[ext_resource type="PackedScene" uid="uid://bmnnsys10mvbb" path="res://scenes/slime.tscn" id="13_1oww8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_no4rq"]
 texture = ExtResource("1_p0bvg")
@@ -2343,9 +2343,6 @@ tile_set = SubResource("TileSet_7u6s8")
 tile_map_data = PackedByteArray("AAAsABMAAAASAAQAAAAsABQAAAASAAUAAAAsABUAAAASAAYAAAAtABEAAAATAAIAAAAtABIAAAATAAMAAAAtABMAAAATAAQAAAAtABQAAAATAAUAAAAtABUAAAATAAYAAAAtABYAAAATAAcAAAAuABEAAAAUAAIAAAAuABIAAAAUAAMAAAAuABMAAAAUAAQAAAAuABQAAAAUAAUAAAAuABUAAAAUAAYAAAAuABYAAAAUAAcAAAAuABcAAAAUAAgAAAAuABgAAAAUAAkAAAAvABEAAAAVAAIAAAAvABIAAAAVAAMAAAAvABMAAAAVAAQAAAAvABQAAAAVAAUAAAAvABUAAAAVAAYAAAAvABYAAAAVAAcAAAAvABcAAAAVAAgAAAAvABgAAAAVAAkAAAAwABEAAAAWAAIAAAAwABIAAAAWAAMAAAAwABMAAAAWAAQAAAAwABQAAAAWAAUAAAAwABUAAAAWAAYAAAAwABYAAAAWAAcAAAAxABMAAAAXAAQAAAAxABQAAAAXAAUAAAAxABUAAAAXAAYAAAAUAAgAAAAKAAIAAAAUAAkAAAAKAAMAAAAUAAoAAAAKAAQAAAAUAAsAAAAKAAUAAAAUAAwAAAAKAAYAAAAVAAcAAAALAAEAAAAVAAgAAAALAAIAAAAVAAkAAAALAAMAAAAVAAoAAAALAAQAAAAVAAsAAAALAAUAAAAVAAwAAAALAAYAAAAVAA0AAAALAAcAAAAWAAcAAAAMAAEAAAAWAAgAAAAMAAIAAAAWAAkAAAAMAAMAAAAWAAoAAAAMAAQAAAAWAAsAAAAMAAUAAAAWAAwAAAAMAAYAAAAWAA0AAAAMAAcAAAAWAA4AAAAMAAgAAAAWAA8AAAAMAAkAAAAXAAcAAAANAAEAAAAXAAgAAAANAAIAAAAXAAkAAAANAAMAAAAXAAoAAAANAAQAAAAXAAsAAAANAAUAAAAXAAwAAAANAAYAAAAXAA0AAAANAAcAAAAXAA4AAAANAAgAAAAXAA8AAAANAAkAAAAYAAcAAAAOAAEAAAAYAAgAAAAOAAIAAAAYAAkAAAAOAAMAAAAYAAoAAAAOAAQAAAAYAAsAAAAOAAUAAAAYAAwAAAAOAAYAAAAYAA0AAAAOAAcAAAAZAAgAAAAPAAIAAAAZAAkAAAAPAAMAAAAZAAoAAAAPAAQAAAAZAAsAAAAPAAUAAAAZAAwAAAAPAAYAAAATABYAAAANAAwAAAATABcAAAANAA0AAAAUABUAAAAOAAsAAAAUABYAAAAOAAwAAAAUABcAAAAOAA0AAAAUABgAAAAOAA4AAAAVABUAAAAPAAsAAAAVABYAAAAPAAwAAAAVABcAAAAPAA0AAAAVABgAAAAPAA4AAAAWABYAAAAQAAwAAAAWABcAAAAQAA0AAAAhAAoAAAANAAwAAAAhAAsAAAANAA0AAAAiAAkAAAAOAAsAAAAiAAoAAAAOAAwAAAAiAAsAAAAOAA0AAAAiAAwAAAAOAA4AAAAjAAkAAAAPAAsAAAAjAAoAAAAPAAwAAAAjAAsAAAAPAA0AAAAjAAwAAAAPAA4AAAAkAAoAAAAQAAwAAAAkAAsAAAAQAA0AAAARACAAAAACAAwAAAARACEAAAACAA0AAAASACAAAAADAAwAAAASACEAAAADAA0AAAAwAB4AAAACAAwAAAAwAB8AAAACAA0AAAAxAB4AAAADAAwAAAAxAB8AAAADAA0AAAA=")
 tile_set = SubResource("TileSet_acdqv")
 
-[node name="StaticBody2D" parent="tile canister/ground/wall/shadows/props" instance=ExtResource("9_5hkpn")]
-position = Vector2(661, 362)
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -2380,5 +2377,9 @@ zoom = Vector2(3, 3)
 [node name="playercanister" parent="." instance=ExtResource("10_3ufil")]
 position = Vector2(548, 356)
 
-[node name="slime" parent="." instance=ExtResource("11_a1guq")]
+[node name="slime" parent="." instance=ExtResource("13_1oww8")]
 position = Vector2(744, 200)
+
+[node name="pickup" parent="." instance=ExtResource("11_a1guq")]
+position = Vector2(384, 394)
+power_type = "gold up"

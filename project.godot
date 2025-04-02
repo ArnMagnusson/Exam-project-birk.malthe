@@ -64,6 +64,12 @@ debug={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_4="Enemy take damage"
+2d_physics/layer_5="Player damage layer"
+2d_physics/layer_6="powerup_layer"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

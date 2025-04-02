@@ -82,7 +82,7 @@ func dash():
 func inventory():
 	pass
 
-func perks():
+func powerups():
 	pass
 	
 func player_health():
