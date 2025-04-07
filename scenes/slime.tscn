@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://boxsxilo5yasd" path="res://scripts/slime.gd" id="1_p2gj0"]
 [ext_resource type="Texture2D" uid="uid://bf2mmb4s6ykxf" path="res://enemies/blue_slime.png" id="2_n6pvg"]
+[ext_resource type="Texture2D" uid="uid://cfx61eb4u3ept" path="res://particles/magic_particles_12.png" id="2_pjw23"]
 
 [sub_resource type="Animation" id="Animation_4l1t8"]
 length = 0.001
@@ -139,18 +140,24 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4l1t8"]
-radius = 11.0454
+radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2gj0"]
 radius = 162.012
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n6pvg"]
-radius = 11.0
-
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemies"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 11
+collision_mask = 11
 script = ExtResource("1_p2gj0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 493.0
+offset_bottom = 493.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_pjw23")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_n6pvg")
@@ -162,9 +169,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_ppcr1")
 }
 
-[node name="hit_detection" type="Area2D" parent="."]
+[node name="attack_detection" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_detection"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_detection"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_4l1t8")
 debug_color = Color(0.923512, 0.275891, 0, 0.42)
@@ -177,9 +186,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_p2gj0")
 debug_color = Color(1.03481e-06, 0.646434, 0.237131, 0.42)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_n6pvg")
-debug_color = Color(1, 0.0086283, 0.0413556, 0.42)
-
+[connection signal="body_entered" from="attack_detection" to="." method="_on_attack_detection_body_entered"]
+[connection signal="body_exited" from="attack_detection" to="." method="_on_attack_detection_body_exited"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
