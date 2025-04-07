@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#region inspector stuff, like onready, var
 @onready var enemyhit = $Enemyhit
 
 #general stats
@@ -24,54 +25,66 @@ extends CharacterBody2D
 var attacking = false
 @onready var LungeDetect = $WeaponDetection/Lungedetection/lungedetectionshape
 @onready var SlashDetect = $WeaponDetection/slashdetection/slashdetectioncolish
+#endregion
 
 func _ready():
 	VFXL.hide()
 	VFXS.hide()
 	LungeDetect.set_deferred("disabled", true)
 	SlashDetect.set_deferred("disabled", true)
+	
 func _process(delta):
-	var direction = Input.get_axis("left", "right") #venstre - value højre + value
-	var vertical_direction = Input.get_axis("up", "down")
 	player_health()
 	attack()
 	debugkey()
 	
-	if direction:
-		velocity.x = direction * speed
-		if direction > 0:
-			$Sprite2D.flip_h = false
-			VFXL.flip_h = false
-			VFXS.flip_h = false
-			$AnimationPlayer.play("Run")
-		elif direction < 0:
-			$Sprite2D.flip_h = true
-			VFXL.flip_h = true
-			VFXS.flip_h = true
+	#Directions, left, right, up and down
+	var direction = Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("up", "down")
+	)
+	
+#region movement animation
+	if attacking == false:
+		velocity = direction * speed
+		if direction.length() > 0:
+			var facing_left = direction.x < 0
+			$Sprite2D.flip_h = facing_left
+			VFXL.flip_h = facing_left
+			VFXS.flip_h = facing_left
 			$AnimationPlayer.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-	if vertical_direction:
-		velocity.y = vertical_direction * speed
-	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
-		
-	if direction == 0:
-		if $AnimationPlayer.current_animation != "attack":
-			$AnimationPlayer.play("idle")
+	
+	if direction.length() == 0 and $AnimationPlayer.current_animation != "attack":
+		$AnimationPlayer.play("idle")
+
+	if attacking == true:
+		velocity = Vector2(0, 0)
+		speed = 0
+	else:
+		if attacking == false:
+			speed = 40
 	move_and_slide()
 	
+#endregion
+	
+#region attack animation region
 func attack():
-	if Input.is_action_just_pressed("left_click") and $AnimationPlayer.current_animation !="Run":
+	if Input.is_action_just_pressed("left_click"):
 		print("slash")
+		speed = 0
 		$AnimationPlayer.play("attack")
 		attacking = true
 	
 	if $AnimationPlayer.current_animation != "attack":
+		speed = 40
 		attacking = false
 		LungeDetect.set_deferred("disabled", true)
 		SlashDetect.set_deferred("disabled", true)
-		
+#endregion
+
 func death():
 	print("dead")
 	queue_free()
@@ -79,11 +92,18 @@ func death():
 func dash():
 	pass
 
-func inventory():
-	pass
-
-func perks():
-	pass
+func powerups(power_type: String):
+	match power_type:
+		"speed boost":
+			speed *= 1.5
+		"health up":
+			health = 3
+		"strength":
+			strength *=1.2
+		"gold up":
+			gold_multiplier *= 2
+		"fortitude":
+			fortitude += 3
 	
 func player_health():
 	pass
@@ -92,6 +112,8 @@ func player_health():
 func debugkey():
 	if Input.is_action_just_pressed("debug"):
 		print(attacking) 
+		
+#region Dealdamage/takedamage
 
 #damage function
 func take_damage(damage_amount):
@@ -110,3 +132,4 @@ func _on_slashdetection_body_entered(body):
 	print("body detected")
 	if body.has_method("take_damage"):
 		body.take_damage(SlashDMG)
+#endregion
