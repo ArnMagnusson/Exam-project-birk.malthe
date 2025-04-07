@@ -118,9 +118,9 @@ func debugkey():
 #damage function
 func take_damage(damage_amount):
 	health -= damage_amount
-	health <= 0
 	print("Damage taken")
-	death()
+	if health <= 0:
+		death()
 	
 #lunge and slash detection
 func _on_lungedetection_body_entered(body):
