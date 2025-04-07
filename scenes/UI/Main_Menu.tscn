@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dcy6mj8x4tky7"]
+[gd_scene load_steps=26 format=4 uid="uid://dcy6mj8x4tky7"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_p0bvg"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_ypapd"]
@@ -9,8 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://batsdudpd1j73" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Shadow.png" id="7_eu7h8"]
 [ext_resource type="Texture2D" uid="uid://dx6nieyjempde" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Shadow Plant.png" id="8_hgpxr"]
 [ext_resource type="FontFile" uid="uid://c1ng3mtxhupmw" path="res://fonts/DungeonFont.ttf" id="9_afsnh"]
-[ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="10_3ufil"]
-[ext_resource type="PackedScene" uid="uid://bmnnsys10mvbb" path="res://scenes/slime.tscn" id="13_1oww8"]
+[ext_resource type="Script" uid="uid://ci4vb2xvxbpk7" path="res://scripts/UI/button_canister.gd" id="10_f7bi6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_no4rq"]
 texture = ExtResource("1_p0bvg")
@@ -2362,19 +2361,58 @@ theme_override_fonts/font = ExtResource("9_afsnh")
 theme_override_font_sizes/font_size = 50
 text = "Dungeon Hero"
 
+[node name="button canister" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = -2.0
+offset_top = -6.0
+offset_right = 38.0
+offset_bottom = 34.0
+script = ExtResource("10_f7bi6")
+
+[node name="exit" type="Button" parent="Control/button canister"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 236.0
+offset_right = -23.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("9_afsnh")
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+
+[node name="Options" type="Button" parent="Control/button canister"]
+layout_mode = 0
+offset_left = -83.0
+offset_top = 201.0
+offset_right = -6.0
+offset_bottom = 235.0
+theme_override_fonts/font = ExtResource("9_afsnh")
+theme_override_font_sizes/font_size = 25
+text = "Options"
+
+[node name="start" type="Button" parent="Control/button canister"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.137
+anchor_top = 6.132
+anchor_right = -1.137
+anchor_bottom = 6.132
+offset_left = -28.52
+offset_top = -80.28
+offset_right = 28.48
+offset_bottom = -46.28
+theme_override_fonts/font = ExtResource("9_afsnh")
+theme_override_font_sizes/font_size = 25
+text = "Start"
+
 [node name="sun" type="DirectionalLight2D" parent="."]
 energy = 0.4
 shadow_filter = 1
 max_distance = 100000.0
 
-[node name="Node" type="Node" parent="sun"]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(554, 336)
 zoom = Vector2(3, 3)
 
-[node name="playercanister" parent="." instance=ExtResource("10_3ufil")]
-position = Vector2(548, 356)
-
-[node name="slime" parent="." instance=ExtResource("13_1oww8")]
-position = Vector2(744, 200)
+[connection signal="pressed" from="Control/button canister/exit" to="Control/button canister" method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/button canister/Options" to="Control/button canister" method="_on_options_pressed"]
+[connection signal="pressed" from="Control/button canister/start" to="Control/button canister" method="_on_start_pressed"]
