@@ -614,8 +614,8 @@ size = Vector2(50, 11)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ur7pv"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
-collision_layer = 48
-collision_mask = 48
+collision_layer = 49
+collision_mask = 49
 script = ExtResource("1_bs5m7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -660,8 +660,8 @@ frame = 1
 [node name="WeaponDetection" type="Node2D" parent="."]
 
 [node name="Lungedetection" type="Area2D" parent="WeaponDetection"]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 8
+collision_mask = 8
 
 [node name="lungedetectionshape" type="CollisionShape2D" parent="WeaponDetection/Lungedetection"]
 position = Vector2(32, -5.5)
@@ -671,8 +671,8 @@ debug_color = Color(0, 1, 0, 0.4)
 [node name="slashdetection" type="Area2D" parent="WeaponDetection"]
 position = Vector2(6, 2)
 scale = Vector2(5.88, 3.6)
-collision_layer = 9
-collision_mask = 9
+collision_layer = 8
+collision_mask = 8
 
 [node name="slashdetectioncolish" type="CollisionShape2D" parent="WeaponDetection/slashdetection"]
 shape = SubResource("CircleShape2D_ur7pv")
