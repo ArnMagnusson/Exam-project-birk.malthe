@@ -631,6 +631,7 @@ libraries = {
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -1)
 scale = Vector2(1.16, 1)
 shape = SubResource("CapsuleShape2D_ibmfg")
@@ -639,6 +640,7 @@ shape = SubResource("CapsuleShape2D_ibmfg")
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemyhit"]
+visible = false
 position = Vector2(-1, -1)
 scale = Vector2(1.52, 1.28)
 shape = SubResource("CapsuleShape2D_dqkch")
