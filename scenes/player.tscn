@@ -216,7 +216,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../WeaponDetection/Lungedetection/lungedetectionshape:visible")
+tracks/17/path = NodePath("../WeaponDetection/Lungedetection/lungedetectionshape:disabled")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -228,7 +228,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../WeaponDetection/slashdetection/slashdetectioncolish:visible")
+tracks/18/path = NodePath("../WeaponDetection/slashdetection/slashdetectioncolish:disabled")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -666,6 +666,7 @@ collision_mask = 8
 [node name="lungedetectionshape" type="CollisionShape2D" parent="WeaponDetection/Lungedetection"]
 position = Vector2(32, -5.5)
 shape = SubResource("RectangleShape2D_smehm")
+disabled = true
 debug_color = Color(0, 1, 0, 0.4)
 
 [node name="slashdetection" type="Area2D" parent="WeaponDetection"]
@@ -676,6 +677,7 @@ collision_mask = 8
 
 [node name="slashdetectioncolish" type="CollisionShape2D" parent="WeaponDetection/slashdetection"]
 shape = SubResource("CircleShape2D_ur7pv")
+disabled = true
 debug_color = Color(0.776471, 1, 0, 0.419608)
 
 [node name="playercam" type="Camera2D" parent="."]
