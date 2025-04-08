@@ -2981,7 +2981,7 @@ tile_map_data = PackedByteArray("AAA1ADYAAAAFAAIAAAA1ADcAAAAFAAMAAAA2ADYAAAAGAAI
 tile_set = SubResource("TileSet_bcvtv")
 
 [node name="player" parent="." instance=ExtResource("9_bkknd")]
-position = Vector2(503, 500)
+position = Vector2(619, 984)
 motion_mode = 1
 
 [node name="slime1" parent="." instance=ExtResource("10_ps85p")]
