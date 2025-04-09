@@ -2,12 +2,11 @@ extends CharacterBody2D
 
 #variables for damage, health, speed & gold + player variables
 @export var damage = 1
-@export var health = 5
-@export var speed = 35
-@export var gold = 2
+@export var health = 3
+@export var speed = 70
+@export var gold = 5
 var player = null
-@onready var character_body_2d: CharacterBody2D = $"slime"
-const pickup = preload("res://scenes/base_pickup/Base_pickup.tscn")
+@onready var character_body_2d: CharacterBody2D = $"ghost."
 
 #movement script
 func _physics_process(delta):
@@ -18,7 +17,7 @@ func _physics_process(delta):
 		#sets velocity equal to direction * movement speed to determine where and how fast the slime goes
 		velocity = direction * speed
 		#walk animation
-		$AnimationPlayer.play("slime_walk")
+		$AnimationPlayer.play("ghost_walk")
 		move_and_slide()
 		
 
@@ -43,10 +42,7 @@ func death():
 	$TextureRect.visible = true
 	player = null
 	await get_tree().create_timer(0.5).timeout
-	damage = 0
-	pickup
 	queue_free()
-
 
 #slime deal damage function
 func _on_attack_detection_body_entered(body: Node2D) -> void:
@@ -55,6 +51,3 @@ func _on_attack_detection_body_entered(body: Node2D) -> void:
 		player = null
 		await get_tree().create_timer(0.5).timeout
 		player = body
-
-
-	

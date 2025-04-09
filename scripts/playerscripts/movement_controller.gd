@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var enemyhit = $Enemyhit
 
 #general stats
-@export var speed = 40
+@export var speed = 60
 @export var gold = 0
 @export var dash_speed = 40
 @export var LungeDMG = 3
