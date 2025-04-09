@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var strength = 1
 @export var constitution = 1
 @export var health = 3
+@export var max_health = 3
 @export var gold_multiplier = 0
 
 #Animation
@@ -25,6 +26,7 @@ extends CharacterBody2D
 var attacking = false
 @onready var LungeDetect = $WeaponDetection/Lungedetection/lungedetectionshape
 @onready var SlashDetect = $WeaponDetection/slashdetection/slashdetectioncolish
+@onready var hud = $HUD
 #endregion
 
 func _ready():
@@ -32,7 +34,7 @@ func _ready():
 	VFXS.hide()
 	LungeDetect.set_deferred("disabled", true)
 	SlashDetect.set_deferred("disabled", true)
-	
+	$HUD.updatehealthbar(health, max_health)
 func _process(delta):
 	player_health()
 	attack()
@@ -119,6 +121,7 @@ func debugkey():
 func take_damage(damage_amount):
 	health -= damage_amount
 	print("Damage taken")
+	hud.updatehealthbar(health, max_health)
 	if health <= 0:
 		death()
 	
