@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5vdna6q7hwsq"]
+
+[ext_resource type="Texture2D" uid="uid://buuyahf7wujg0" path="res://Character textures/UI/SHOP/Shop background.png" id="1_ubd6k"]
+[ext_resource type="Texture2D" uid="uid://b355byoy1kom0" path="res://gear textures/boots.png" id="2_1kyfx"]
+[ext_resource type="Texture2D" uid="uid://bdqrcuy0ivpkq" path="res://gear textures/chestplate.png" id="3_syevf"]
+[ext_resource type="Texture2D" uid="uid://bafe0hqr5as6p" path="res://gear textures/gauntlet.png" id="4_ar6qn"]
+[ext_resource type="Texture2D" uid="uid://bwxgeeqk5frad" path="res://gear textures/helmet.png" id="5_3f3wn"]
+[ext_resource type="Texture2D" uid="uid://bjeb5felxfgcg" path="res://gear textures/leggings.png" id="6_8crdp"]
+[ext_resource type="Texture2D" uid="uid://cd4xkb7c5dodf" path="res://gear textures/glaive.png" id="7_r6j0g"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="button controller" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bootscontroller" type="Control" parent="button controller"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 4.0
+offset_right = 56.0
+offset_bottom = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="button controller/bootscontroller"]
+show_behind_parent = true
+position = Vector2(20, 20)
+texture = ExtResource("1_ubd6k")
+
+[node name="Boots" type="TextureButton" parent="button controller/bootscontroller"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_1kyfx")
+
+[node name="chestplatecontroller" type="Control" parent="button controller"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -71.0
+offset_top = 4.0
+offset_right = -71.0
+offset_bottom = 4.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="button controller/chestplatecontroller"]
+show_behind_parent = true
+position = Vector2(20, 20)
+texture = ExtResource("1_ubd6k")
+
+[node name="Chestplate" type="TextureButton" parent="button controller/chestplatecontroller"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_syevf")
+
+[node name="Gauntletcontroller" type="Control" parent="button controller"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 56.0
+offset_bottom = 64.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="button controller/Gauntletcontroller"]
+show_behind_parent = true
+position = Vector2(21, 20)
+texture = ExtResource("1_ubd6k")
+
+[node name="gauntlet" type="TextureButton" parent="button controller/Gauntletcontroller"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("4_ar6qn")
+
+[node name="HelmetController" type="Control" parent="button controller"]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 64.0
+offset_bottom = 64.0
+
+[node name="Sprite2D4" type="Sprite2D" parent="button controller/HelmetController"]
+show_behind_parent = true
+position = Vector2(17, 20)
+texture = ExtResource("1_ubd6k")
+
+[node name="Helmet" type="TextureButton" parent="button controller/HelmetController"]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 37.0
+offset_bottom = 40.0
+texture_normal = ExtResource("5_3f3wn")
+
+[node name="leggingscontroller" type="Control" parent="button controller"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -71.0
+offset_top = 64.0
+offset_right = -71.0
+offset_bottom = 64.0
+
+[node name="Sprite2D5" type="Sprite2D" parent="button controller/leggingscontroller"]
+show_behind_parent = true
+position = Vector2(20, 19)
+texture = ExtResource("1_ubd6k")
+
+[node name="leggings" type="TextureButton" parent="button controller/leggingscontroller"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("6_8crdp")
+
+[node name="Glaivecontroller" type="Control" parent="button controller"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 4.0
+
+[node name="Sprite2D6" type="Sprite2D" parent="button controller/Glaivecontroller"]
+show_behind_parent = true
+position = Vector2(20, 19)
+texture = ExtResource("1_ubd6k")
+
+[node name="Glaive" type="TextureButton" parent="button controller/Glaivecontroller"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("7_r6j0g")
