@@ -1,7 +1,5 @@
 extends Control
-
-@onready var healthbar = $Health/health
-@onready var gold = $gold
+#@onready var gold maybe we will see
 
 func updatehealthbar(health, max_health):
 	if health == 2:

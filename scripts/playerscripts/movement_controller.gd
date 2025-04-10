@@ -106,7 +106,7 @@ func powerups(power_type: String):
 			gold_multiplier *= 2 #Double coins
 		"fortitude":
 			fortitude += 3 #increase fortitude ikke implementeret endnu i selve koden.
-	
+	print(power_type)
 func player_health():
 	pass
 	

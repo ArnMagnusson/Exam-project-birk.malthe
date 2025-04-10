@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var gold_reward = 2
 var player = null
 @onready var character_body_2d: CharacterBody2D = $"slime"
-const pickup = preload("res://scenes/base_pickup/Base_pickup.tscn")
+var pickup = preload("res://scenes/base_pickup/Base_pickup.tscn")
 
 #movement script
 func _physics_process(delta):
@@ -45,7 +45,10 @@ func death():
 	player = null
 	await get_tree().create_timer(0.5).timeout
 	damage = 0
-	pickup
+	$CollisionShape2D.hide()
+	var pickup_instance = pickup.instantiate()
+	self.add_child(pickup_instance)
+	await get_tree().create_timer(0.5).timeout
 	queue_free()
 
 

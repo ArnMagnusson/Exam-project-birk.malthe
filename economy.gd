@@ -14,3 +14,4 @@ func spend_gold(cost, item):
 	
 func Gold_dropped(gold_reward):
 	gold += gold_reward
+	print(gold)
