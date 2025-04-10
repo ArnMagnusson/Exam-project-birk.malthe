@@ -47,7 +47,7 @@ func _process(delta):
 	)
 	
 #region movement animation
-	if attacking == false:
+	if attacking == false: #hvis attacking er false, movement unlocked.
 		velocity = direction * speed
 		if direction.length() > 0:
 			var facing_left = direction.x < 0
@@ -60,13 +60,13 @@ func _process(delta):
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
 	if direction.length() == 0 and $AnimationPlayer.current_animation != "attack":
-		$AnimationPlayer.play("idle")
+		$AnimationPlayer.play("idle") #spiller idle, hvis man ikke bevæger sig og animation ikke er attack
 
-	if attacking == true:
+	if attacking == true: #locks movement when attacking
 		velocity = Vector2(0, 0)
 		speed = 0
 	else:
-		if attacking == false:
+		if attacking == false: #unlocks movement when not attacking
 			speed = 40
 	move_and_slide()
 	
@@ -99,13 +99,13 @@ func powerups(power_type: String):
 		"speed boost":
 			speed *= 1.5
 		"health up":
-			health = 3
+			health = 3 #basically regen
 		"strength":
-			strength *=1.2
+			strength *=1.2 #increaser strength aka damage.
 		"gold up":
-			gold_multiplier *= 2
+			gold_multiplier *= 2 #Double coins
 		"fortitude":
-			fortitude += 3
+			fortitude += 3 #increase fortitude ikke implementeret endnu i selve koden.
 	
 func player_health():
 	pass
@@ -118,11 +118,11 @@ func debugkey():
 #region Dealdamage/takedamage
 
 #damage function
-func take_damage(damage_amount):
-	health -= damage_amount
-	print("Damage taken")
-	hud.updatehealthbar(health, max_health)
-	if health <= 0:
+func take_damage(damage_amount): #callet af fjender
+	health -= damage_amount #-health med damage
+	print("Damage taken") #Printer damage taken
+	hud.updatehealthbar(health, max_health) #kalder update function i Hud
+	if health <= 0: #hvis health er mindre end 0 og er 0 kalder death function.
 		death()
 	
 #lunge and slash detection
