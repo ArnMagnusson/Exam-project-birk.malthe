@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var damage = 1
 @export var health = 5
 @export var speed = 35
-@export var gold = 2
+@export var gold_reward = 2
 var player = null
 @onready var character_body_2d: CharacterBody2D = $"slime"
 const pickup = preload("res://scenes/base_pickup/Base_pickup.tscn")
@@ -35,6 +35,7 @@ func take_damage(damage_ammount):
 	print("damage taken", health)
 	health -=damage_ammount
 	if health <= 0:
+		Economy.Gold_dropped(gold_reward)
 		death()
 
 #death function, removes slime & death animation

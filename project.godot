@@ -15,6 +15,10 @@ run/main_scene="uid://dcy6mj8x4tky7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Economy="*res://economy.gd"
+
 [display]
 
 window/size/viewport_width=1920

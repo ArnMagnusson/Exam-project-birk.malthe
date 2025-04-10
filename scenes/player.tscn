@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://d4hyd7xdmi2bg"]
+[gd_scene load_steps=18 format=3 uid="uid://d4hyd7xdmi2bg"]
 
 [ext_resource type="Script" uid="uid://7bvqack2dey8" path="res://scripts/playerscripts/movement_controller.gd" id="1_bs5m7"]
 [ext_resource type="Texture2D" uid="uid://bx5xjano3ljq" path="res://Character textures/glaive warrior!/glaivespritesheets/runanimation.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://3xtgxxfeutb7" path="res://Character textures/glaive warrior!/glaivespritesheets/idlespritesheet.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://em8e5d4quqy6" path="res://Character textures/glaive warrior!/glaivespritesheets/slashspritesheet.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://chapel0mhlold" path="res://Character textures/glaive warrior!/glaivespritesheets/lungespritesheet.png" id="4_fjrip"]
+[ext_resource type="PackedScene" uid="uid://dhgcgbtqhsnpm" path="res://scenes/UI/HUD.tscn" id="7_fjrip"]
 [ext_resource type="Texture2D" uid="uid://dyhcqh6wa6bkg" path="res://Character textures/glaive warrior!/glaivespritesheets/glaiv warrior attack sprite sheet.png" id="35_bj30b"]
 
 [sub_resource type="Animation" id="Animation_t4otl"]
@@ -677,6 +678,16 @@ collision_mask = 8
 [node name="slashdetectioncolish" type="CollisionShape2D" parent="WeaponDetection/slashdetection"]
 shape = SubResource("CircleShape2D_ur7pv")
 debug_color = Color(0.776471, 1, 0, 0.419608)
+
+[node name="HUD" parent="." instance=ExtResource("7_fjrip")]
+offset_left = -284.0
+offset_top = -145.0
+offset_right = -284.0
+offset_bottom = -145.0
+scale = Vector2(0.559999, 0.559999)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 
 [connection signal="area_entered" from="Enemyhit" to="." method="_on_enemyhit_area_entered"]
 [connection signal="body_entered" from="WeaponDetection/Lungedetection" to="." method="_on_lungedetection_body_entered"]
