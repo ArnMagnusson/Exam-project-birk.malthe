@@ -2,21 +2,16 @@ extends CharacterBody2D
 
 #region inspector stuff, like onready, var
 @onready var enemyhit = $Enemyhit
+#stats
+@export var health = 100
+@export var max_health = 100
+@export var gold_multiplier = 0
 
 #general stats
 @export var speed = 60
-@export var gold = 0
 @export var dash_speed = 40
-@export var LungeDMG = 3
-@export var SlashDMG = 1
-
-#stats
-@export var fortitude = 1
-@export var strength = 1
-@export var constitution = 1
-@export var health = 3
-@export var max_health = 3
-@export var gold_multiplier = 0
+@export var LungeDMG = 30
+@export var SlashDMG = 15
 
 #Animation
 @onready var VFXL = $"VFX container/VFXLunge"
@@ -76,7 +71,7 @@ func _process(delta):
 func attack():
 	if Input.is_action_just_pressed("left_click"):
 		print("slash")
-		speed = 0
+		speed = 0 #change at somepoint
 		$AnimationPlayer.play("attack")
 		attacking = true
 	
@@ -99,13 +94,14 @@ func powerups(power_type: String):
 		"speed boost":
 			speed *= 1.5
 		"health up":
-			health = 3 #basically regen
+			if health < 80: #change later
+				health += 20 #basically regen
 		"strength":
-			strength *=1.2 #increaser strength aka damage.
+			Playerstats.strength *=1.2 #increaser strength aka damage.
 		"gold up":
 			gold_multiplier *= 2 #Double coins
 		"fortitude":
-			fortitude += 3 #increase fortitude ikke implementeret endnu i selve koden.
+			Playerstats.fortitude += 3 #increase fortitude
 	print(power_type)
 func player_health():
 	pass
@@ -119,6 +115,7 @@ func debugkey():
 
 #damage function
 func take_damage(damage_amount): #callet af fjender
+	damage_amount -= Playerstats.fortitude*2
 	health -= damage_amount #-health med damage
 	print("Damage taken") #Printer damage taken
 	hud.updatehealthbar(health, max_health) #kalder update function i Hud
@@ -129,10 +126,10 @@ func take_damage(damage_amount): #callet af fjender
 func _on_lungedetection_body_entered(body):
 	print("body detected") #Prints if body is detected
 	if body.has_method("take_damage"): #checks if body has take_damage function
-		body.take_damage(LungeDMG) #calls take_damage function. PS you can do this, wish i knew sooner.
+		body.take_damage(LungeDMG+Playerstats.strength*2) #calls take_damage function. PS you can do this, wish i knew sooner.
 #check notes above
 func _on_slashdetection_body_entered(body):
 	print("body detected")
 	if body.has_method("take_damage"):
-		body.take_damage(SlashDMG)
+		body.take_damage(SlashDMG+Playerstats.strength*2)
 #endregion

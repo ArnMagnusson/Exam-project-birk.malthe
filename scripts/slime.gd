@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 #variables for damage, health, speed & gold + player variables
-@export var damage = 1
-@export var health = 5
+@export var damage = 30
+@export var health = 50
 @export var speed = 35
-@export var gold_reward = 2
+@export var gold_reward = 20
 var player = null
 @onready var character_body_2d: CharacterBody2D = $"slime"
 var pickup = preload("res://scenes/base_pickup/Base_pickup.tscn")

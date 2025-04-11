@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 #variables for damage, health, speed & gold + player variables
-@export var damage = 1
-@export var health = 3
+@export var damage = 10
+@export var health = 30
 @export var speed = 70
-@export var gold = 5
+@export var gold = 30
 var player = null
 @onready var character_body_2d: CharacterBody2D = $"ghost."
 

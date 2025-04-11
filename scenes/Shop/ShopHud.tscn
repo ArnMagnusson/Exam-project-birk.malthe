@@ -1,11 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5vdna6q7hwsq"]
+[gd_scene load_steps=12 format=3 uid="uid://c5vdna6q7hwsq"]
 
+[ext_resource type="Script" uid="uid://pf5gcbs3kxv8" path="res://scenes/Shop/shop controller.gd" id="1_3f3wn"]
 [ext_resource type="Texture2D" uid="uid://buuyahf7wujg0" path="res://Character textures/UI/SHOP/Shop background.png" id="1_ubd6k"]
 [ext_resource type="Texture2D" uid="uid://b355byoy1kom0" path="res://gear textures/boots.png" id="2_1kyfx"]
+[ext_resource type="Texture2D" uid="uid://cl5oo0df315m6" path="res://Character textures/UI/SHOP/Gold ammount_Buy_price.png" id="3_ar6qn"]
 [ext_resource type="Texture2D" uid="uid://bdqrcuy0ivpkq" path="res://gear textures/chestplate.png" id="3_syevf"]
+[ext_resource type="Texture2D" uid="uid://dsumd1q1atm5g" path="res://Character textures/UI/Coins.png" id="4_3f3wn"]
 [ext_resource type="Texture2D" uid="uid://bafe0hqr5as6p" path="res://gear textures/gauntlet.png" id="4_ar6qn"]
 [ext_resource type="Texture2D" uid="uid://bwxgeeqk5frad" path="res://gear textures/helmet.png" id="5_3f3wn"]
 [ext_resource type="Texture2D" uid="uid://bjeb5felxfgcg" path="res://gear textures/leggings.png" id="6_8crdp"]
+[ext_resource type="FontFile" uid="uid://c1ng3mtxhupmw" path="res://fonts/DungeonFont.ttf" id="6_r6j0g"]
 [ext_resource type="Texture2D" uid="uid://h0v5n4f8idp6" path="res://gear textures/doubleglaive.png" id="6_ubd6k"]
 
 [node name="Control" type="Control"]
@@ -20,10 +24,12 @@ grow_vertical = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_3f3wn")
 
 [node name="gloves" type="TextureButton" parent="button controller"]
-offset_left = 52.0
-offset_right = 100.0
+layout_mode = 0
+offset_left = -56.0
+offset_right = -8.0
 offset_bottom = 48.0
 texture_normal = ExtResource("1_ubd6k")
 
@@ -31,10 +37,31 @@ texture_normal = ExtResource("1_ubd6k")
 position = Vector2(23, 24)
 texture = ExtResource("4_ar6qn")
 
+[node name="goldbackground" type="Sprite2D" parent="button controller/gloves"]
+position = Vector2(24, 56)
+texture = ExtResource("3_ar6qn")
+
+[node name="coin" type="Sprite2D" parent="button controller/gloves"]
+position = Vector2(8, 56)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_3f3wn")
+
+[node name="Label" type="Label" parent="button controller/gloves"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 52.0
+offset_right = 43.0
+offset_bottom = 73.0
+scale = Vector2(0.660764, 0.429557)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_r6j0g")
+theme_override_font_sizes/font_size = 20
+text = "120"
+
 [node name="chestplate" type="TextureButton" parent="button controller"]
 layout_mode = 0
-offset_left = 104.0
-offset_right = 152.0
+offset_left = -8.0
+offset_right = 40.0
 offset_bottom = 48.0
 texture_normal = ExtResource("1_ubd6k")
 
@@ -42,43 +69,156 @@ texture_normal = ExtResource("1_ubd6k")
 position = Vector2(24, 24)
 texture = ExtResource("3_syevf")
 
+[node name="goldbackground" type="Sprite2D" parent="button controller/chestplate"]
+position = Vector2(24, 56)
+texture = ExtResource("3_ar6qn")
+
+[node name="coin" type="Sprite2D" parent="button controller/chestplate"]
+position = Vector2(8, 56)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_3f3wn")
+
+[node name="Label" type="Label" parent="button controller/chestplate"]
+offset_left = 17.0
+offset_top = 52.0
+offset_right = 43.0
+offset_bottom = 73.0
+scale = Vector2(0.660764, 0.429557)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_r6j0g")
+theme_override_font_sizes/font_size = 20
+text = "180"
+
 [node name="leggings" type="TextureButton" parent="button controller"]
-offset_top = 51.0
-offset_right = 48.0
-offset_bottom = 99.0
+layout_mode = 0
+offset_left = 40.0
+offset_right = 88.0
+offset_bottom = 48.0
 texture_normal = ExtResource("1_ubd6k")
 
 [node name="Leggings" type="Sprite2D" parent="button controller/leggings"]
 position = Vector2(24, 23)
 texture = ExtResource("6_8crdp")
 
-[node name="boots" type="TextureButton" parent="button controller"]
-offset_left = 52.0
+[node name="goldbackground" type="Sprite2D" parent="button controller/leggings"]
+position = Vector2(24, 56)
+texture = ExtResource("3_ar6qn")
+
+[node name="coin" type="Sprite2D" parent="button controller/leggings"]
+position = Vector2(8, 56)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_3f3wn")
+
+[node name="Label" type="Label" parent="button controller/leggings"]
+offset_left = 17.0
 offset_top = 52.0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_right = 43.0
+offset_bottom = 73.0
+scale = Vector2(0.660764, 0.429557)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_r6j0g")
+theme_override_font_sizes/font_size = 20
+text = "140"
+
+[node name="boots" type="TextureButton" parent="button controller"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 72.0
+offset_right = -8.0
+offset_bottom = 120.0
 texture_normal = ExtResource("1_ubd6k")
 
 [node name="Boots" type="Sprite2D" parent="button controller/boots"]
 position = Vector2(24, 24)
 texture = ExtResource("2_1kyfx")
 
-[node name="glaive" type="TextureButton" parent="button controller"]
-offset_left = 104.0
+[node name="goldbackground" type="Sprite2D" parent="button controller/boots"]
+position = Vector2(24, 56)
+texture = ExtResource("3_ar6qn")
+
+[node name="coin" type="Sprite2D" parent="button controller/boots"]
+position = Vector2(8, 56)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_3f3wn")
+
+[node name="Label" type="Label" parent="button controller/boots"]
+offset_left = 17.0
 offset_top = 52.0
-offset_right = 152.0
-offset_bottom = 100.0
+offset_right = 43.0
+offset_bottom = 73.0
+scale = Vector2(0.660764, 0.429557)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_r6j0g")
+theme_override_font_sizes/font_size = 20
+text = "100"
+
+[node name="glaive" type="TextureButton" parent="button controller"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 72.0
+offset_right = 40.0
+offset_bottom = 120.0
 texture_normal = ExtResource("1_ubd6k")
 
 [node name="Doubleglaive" type="Sprite2D" parent="button controller/glaive"]
 position = Vector2(25, 24)
 texture = ExtResource("6_ubd6k")
 
+[node name="goldbackground" type="Sprite2D" parent="button controller/glaive"]
+position = Vector2(24, 56)
+texture = ExtResource("3_ar6qn")
+
+[node name="coin" type="Sprite2D" parent="button controller/glaive"]
+position = Vector2(8, 56)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_3f3wn")
+
+[node name="Label" type="Label" parent="button controller/glaive"]
+offset_left = 17.0
+offset_top = 52.0
+offset_right = 43.0
+offset_bottom = 73.0
+scale = Vector2(0.660764, 0.429557)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_r6j0g")
+theme_override_font_sizes/font_size = 20
+text = "200"
+
 [node name="helmet" type="TextureButton" parent="button controller"]
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = 40.0
+offset_top = 72.0
+offset_right = 88.0
+offset_bottom = 120.0
 texture_normal = ExtResource("1_ubd6k")
 
-[node name="Helmet" type="Sprite2D" parent="button controller"]
+[node name="goldbackground" type="Sprite2D" parent="button controller/helmet"]
+position = Vector2(24, 56)
+texture = ExtResource("3_ar6qn")
+
+[node name="Helmet" type="Sprite2D" parent="button controller/helmet"]
 position = Vector2(24, 23)
 texture = ExtResource("5_3f3wn")
+
+[node name="coin" type="Sprite2D" parent="button controller/helmet"]
+position = Vector2(8, 56)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_3f3wn")
+
+[node name="Label" type="Label" parent="button controller/helmet"]
+offset_left = 17.0
+offset_top = 52.0
+offset_right = 43.0
+offset_bottom = 73.0
+scale = Vector2(0.660764, 0.429557)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_r6j0g")
+theme_override_font_sizes/font_size = 20
+text = "160"
+
+[connection signal="pressed" from="button controller/gloves" to="button controller" method="_on_gloves_pressed"]
+[connection signal="pressed" from="button controller/chestplate" to="button controller" method="_on_chestplate_pressed"]
+[connection signal="pressed" from="button controller/leggings" to="button controller" method="_on_leggings_pressed"]
+[connection signal="pressed" from="button controller/boots" to="button controller" method="_on_boots_pressed"]
+[connection signal="pressed" from="button controller/glaive" to="button controller" method="_on_glaive_pressed"]
+[connection signal="pressed" from="button controller/helmet" to="button controller" method="_on_helmet_pressed"]
