@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://doni1xnorp8vu"
+path="res://.godot/imported/Ambient 1.wav-0c5b02ca0bd92e8a4a50ae926f3fad95.sample"
+
+[deps]
+
+source_file="res://Music/Ambient 1.wav"
+dest_files=["res://.godot/imported/Ambient 1.wav-0c5b02ca0bd92e8a4a50ae926f3fad95.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

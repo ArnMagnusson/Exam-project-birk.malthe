@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhhwvott0yuaj"
+path="res://.godot/imported/Footsteps Loop 1 (Rpg).wav-2dd43dc17e6de9dd3bbdcc07c1135af9.sample"
+
+[deps]
+
+source_file="res://SFX/Footsteps Loop 1 (Rpg).wav"
+dest_files=["res://.godot/imported/Footsteps Loop 1 (Rpg).wav-2dd43dc17e6de9dd3bbdcc07c1135af9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

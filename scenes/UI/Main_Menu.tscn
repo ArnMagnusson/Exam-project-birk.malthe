@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dcy6mj8x4tky7"]
+[gd_scene load_steps=27 format=4 uid="uid://dcy6mj8x4tky7"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_p0bvg"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_ypapd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dx6nieyjempde" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Shadow Plant.png" id="8_hgpxr"]
 [ext_resource type="FontFile" uid="uid://c1ng3mtxhupmw" path="res://fonts/DungeonFont.ttf" id="9_afsnh"]
 [ext_resource type="Script" uid="uid://ci4vb2xvxbpk7" path="res://scripts/UI/button_canister.gd" id="10_f7bi6"]
+[ext_resource type="AudioStream" uid="uid://dv0dys3cxek5h" path="res://Music/Ambient 10 Loop.wav" id="11_a1guq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_no4rq"]
 texture = ExtResource("1_p0bvg")
@@ -2349,18 +2350,6 @@ offset_top = 166.0
 offset_right = 632.0
 offset_bottom = 206.0
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = -178.0
-offset_top = 14.0
-offset_right = 298.0
-offset_bottom = 105.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_afsnh")
-theme_override_font_sizes/font_size = 50
-text = "Dungeon Hero"
-
 [node name="button canister" type="Control" parent="Control"]
 anchors_preset = 0
 offset_left = -2.0
@@ -2372,9 +2361,9 @@ script = ExtResource("10_f7bi6")
 [node name="exit" type="Button" parent="Control/button canister"]
 layout_mode = 0
 offset_left = -69.0
-offset_top = 236.0
+offset_top = 272.0
 offset_right = -23.0
-offset_bottom = 270.0
+offset_bottom = 306.0
 theme_override_fonts/font = ExtResource("9_afsnh")
 theme_override_font_sizes/font_size = 25
 text = "Exit"
@@ -2397,12 +2386,54 @@ anchor_top = 6.132
 anchor_right = -1.137
 anchor_bottom = 6.132
 offset_left = -28.52
-offset_top = -80.28
+offset_top = -79.28
 offset_right = 28.48
-offset_bottom = -46.28
+offset_bottom = -45.28
 theme_override_fonts/font = ExtResource("9_afsnh")
 theme_override_font_sizes/font_size = 25
 text = "Start"
+
+[node name="credits" type="Button" parent="Control/button canister"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 236.0
+offset_right = -8.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("9_afsnh")
+theme_override_font_sizes/font_size = 25
+text = "Credits"
+
+[node name="text" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Main title" type="Label" parent="Control/text"]
+layout_mode = 0
+offset_left = -178.0
+offset_top = 14.0
+offset_right = 298.0
+offset_bottom = 105.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_afsnh")
+theme_override_font_sizes/font_size = 50
+text = "Dungeon Hero"
+
+[node name="credit bamboo wosh" type="Label" parent="Control/text"]
+offset_left = 11.0
+offset_top = 139.0
+offset_right = 638.0
+offset_bottom = 406.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_afsnh")
+theme_override_font_sizes/font_size = 20
+text = "Fast whoosh, bamboo
+swoosh through air, version 2 
+by zapsplat.com 
+-- https://freesound.org/s/719637/ -
+- License: Creative Commons 0"
 
 [node name="sun" type="DirectionalLight2D" parent="."]
 energy = 0.4
@@ -2413,6 +2444,12 @@ max_distance = 100000.0
 position = Vector2(554, 336)
 zoom = Vector2(3, 3)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_a1guq")
+volume_db = 16.505
+autoplay = true
+
 [connection signal="pressed" from="Control/button canister/exit" to="Control/button canister" method="_on_exit_pressed"]
 [connection signal="pressed" from="Control/button canister/Options" to="Control/button canister" method="_on_options_pressed"]
 [connection signal="pressed" from="Control/button canister/start" to="Control/button canister" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/button canister/credits" to="Control/button canister" method="_on_credits_pressed"]

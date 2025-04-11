@@ -1,10 +1,8 @@
 extends Control
 #@onready var gold maybe we will see
+@onready var Healthbar = $Health/healthbar
 
 func updatehealthbar(health, max_health):
-	if health == 2:
-		$"Health/Full heart".hide()
-	elif health == 1:
-		$"Health/half heart".hide()
-	elif health == 0:
-		$"Health/querter heart".hide()
+	Healthbar.max_value = max_health
+	Healthbar.value = health
+	
