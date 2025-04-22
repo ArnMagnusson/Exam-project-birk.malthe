@@ -1886,7 +1886,7 @@ texture = ExtResource("6_tgisv")
 sources/0 = SubResource("TileSetAtlasSource_otxy0")
 sources/1 = SubResource("TileSetAtlasSource_bcsi7")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rw8b"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chifo"]
 texture = ExtResource("7_jy0qb")
 14:0/0 = 0
 14:0/0/z_index = 1
@@ -2336,7 +2336,7 @@ texture = ExtResource("7_jy0qb")
 27:19/0 = 0
 27:20/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8aoxc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4kf1l"]
 texture = ExtResource("4_6w3kl")
 25:1/0 = 0
 26:1/0 = 0
@@ -2687,10 +2687,10 @@ texture = ExtResource("4_6w3kl")
 
 [sub_resource type="TileSet" id="TileSet_8e23d"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_3rw8b")
-sources/1 = SubResource("TileSetAtlasSource_8aoxc")
+sources/0 = SubResource("TileSetAtlasSource_chifo")
+sources/1 = SubResource("TileSetAtlasSource_4kf1l")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkknd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhsdr"]
 texture = ExtResource("8_jm2v8")
 4:0/0 = 0
 4:0/0/z_index = 1
@@ -3081,7 +3081,7 @@ texture = ExtResource("8_jm2v8")
 
 [sub_resource type="TileSet" id="TileSet_bcvtv"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_bkknd")
+sources/0 = SubResource("TileSetAtlasSource_fhsdr")
 
 [node name="Node2D" type="Node2D"]
 
@@ -3113,7 +3113,6 @@ tile_set = SubResource("TileSet_bcvtv")
 
 [node name="player" parent="." instance=ExtResource("9_bkknd")]
 position = Vector2(384, 919)
-collision_mask = 115
 
 [node name="slime1" parent="." instance=ExtResource("10_ps85p")]
 position = Vector2(436, 729)
