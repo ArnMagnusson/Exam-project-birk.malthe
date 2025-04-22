@@ -10,7 +10,6 @@ radius = 14.0357
 script = ExtResource("1_ylhuf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("2_y0r5v")
 
 [node name="pickup_area" type="Area2D" parent="."]
