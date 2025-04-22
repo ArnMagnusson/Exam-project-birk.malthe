@@ -18,11 +18,8 @@ var icon_dict = {
 	}
 	
 func _ready():
-	randomize()
-	var probability : int = 10
-	if (randi() % probability) == (probability - 1):
-		random_drop()
-		
+	randomize() #random seed for RNG
+	#random() #randomizes the power up
 		#hvis der ikke er valgt en power icon i inspector sæt power_icon til icon_dict[power_type]
 		#Specifikke texture eksempel strengthup valgt i inspectoren ingen manuelt sat texture. 
 		#Giver strength up texture automatisk
@@ -41,11 +38,12 @@ func _on_pickup_area_body_entered(body):
 		body.powerups(power_type)
 		queue_free()
 
-func random_drop():
-	var power_ups = ["speed boost", "gold up", "health up", "strength", "fortitude"]
-	if power_ups.size() > 0:
-		var idx : int = randi() % power_ups.size()
-		var power_up = power_ups[idx]
-		power_type = power_up
-		
-	
+#random function
+func random():
+	var keys = icon_dict.keys() #lists all of the types
+	var random_index = randi() % keys.size() #randomizer
+	power_type = keys[random_index] #sætter power_type til random index
+	power_icon = icon_dict[power_type] #søtter power icon til power type
+	print(random_index) #prints random number
+	if sprite and power_icon: #sætter sprite texture
+		sprite.texture = icon_dict[power_type]

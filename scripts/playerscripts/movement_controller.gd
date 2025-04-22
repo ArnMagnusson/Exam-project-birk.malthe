@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 #general stats
 @export var speed = 60
+@export var speed_boost = 1
 @export var dash_speed = 40
 @export var LungeDMG = 30
 @export var SlashDMG = 15
@@ -31,7 +32,6 @@ func _ready():
 	SlashDetect.set_deferred("disabled", true)
 	$HUD.updatehealthbar(health, max_health)
 func _process(delta):
-	player_health()
 	attack()
 	debugkey()
 	
@@ -43,7 +43,7 @@ func _process(delta):
 	
 #region movement animation
 	if attacking == false: #hvis attacking er false, movement unlocked.
-		velocity = direction * speed
+		velocity = direction * speed * speed_boost
 		if direction.length() > 0:
 			var facing_left = direction.x < 0
 			$Sprite2D.flip_h = facing_left
@@ -62,7 +62,7 @@ func _process(delta):
 		speed = 0
 	else:
 		if attacking == false: #unlocks movement when not attacking
-			speed = 40
+			speed = 60 * speed_boost
 	move_and_slide()
 	
 #endregion
@@ -86,30 +86,27 @@ func death():
 	print("dead")
 	queue_free()
 	
-func dash():
-	pass
-
 func powerups(power_type: String):
 	match power_type:
 		"speed boost":
-			speed *= 1.5
+			speed_boost == 1.2
+			print(speed_boost)
 		"health up":
 			if health < 80: #change later
 				health += 20 #basically regen
 		"strength":
 			Playerstats.strength *=1.2 #increaser strength aka damage.
 		"gold up":
-			gold_multiplier *= 2 #Double coins
+			gold_multiplier == 2 #Double coins
 		"fortitude":
 			Playerstats.fortitude += 3 #increase fortitude
 	print(power_type)
-func player_health():
-	pass
 	
 #My debug function for key. I love it.
 func debugkey():
 	if Input.is_action_just_pressed("debug"):
 		print(attacking) 
+		print(speed_boost)
 		
 #region Dealdamage/takedamage
 

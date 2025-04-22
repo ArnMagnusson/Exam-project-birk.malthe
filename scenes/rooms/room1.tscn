@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://5yg65jt4ag4x"]
+[gd_scene load_steps=29 format=4 uid="uid://5yg65jt4ag4x"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_c5sxc"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_jn0fp"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="9_bkknd"]
 [ext_resource type="PackedScene" uid="uid://bmnnsys10mvbb" path="res://scenes/slime.tscn" id="10_ps85p"]
 [ext_resource type="PackedScene" uid="uid://dq2ffc151d0ey" path="res://ghost.tscn" id="11_ps85p"]
+[ext_resource type="PackedScene" uid="uid://bivg8pt1jqcq" path="res://scenes/base_pickup/Base_pickup.tscn" id="12_tmlba"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bkknd"]
 
@@ -2878,3 +2879,6 @@ position = Vector2(788, 777)
 
 [node name="ghost2" parent="." instance=ExtResource("11_ps85p")]
 position = Vector2(326, 387)
+
+[node name="pickup" parent="." instance=ExtResource("12_tmlba")]
+position = Vector2(333, 992)

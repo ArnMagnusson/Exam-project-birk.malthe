@@ -46,8 +46,10 @@ func death():
 	await get_tree().create_timer(0.5).timeout
 	damage = 0
 	$CollisionShape2D.hide()
-	var pickup_instance = pickup.instantiate()
-	self.add_child(pickup_instance)
+	var powerupscene = preload("res://scenes/base_pickup/Base_pickup.tscn")
+	var instance = powerupscene.instantiate()
+	instance.global_position = global_position
+	get_parent().add_child(instance)
 	await get_tree().create_timer(0.5).timeout
 	queue_free()
 
