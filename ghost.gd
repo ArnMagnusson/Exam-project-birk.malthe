@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var damage = 10
 @export var health = 30
 @export var speed = 70
-@export var gold = 30
+@export var gold_reward = 30
 var player = null
 @onready var character_body_2d: CharacterBody2D = $"ghost."
 
@@ -38,6 +38,7 @@ func take_damage(damage_ammount):
 
 #death function, removes slime & death animation
 func death():
+	Economy.Gold_dropped(gold_reward)
 	$Sprite2D.hide()
 	$TextureRect.visible = true
 	player = null

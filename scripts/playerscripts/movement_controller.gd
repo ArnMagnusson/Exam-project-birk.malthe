@@ -5,7 +5,6 @@ extends CharacterBody2D
 #stats
 @export var health = 100
 @export var max_health = 100
-@export var gold_multiplier = 0
 
 #general stats
 @export var speed = 60
@@ -76,7 +75,7 @@ func attack():
 		attacking = true
 	
 	if $AnimationPlayer.current_animation != "attack":
-		speed = 40
+		speed = 60
 		attacking = false
 		LungeDetect.set_deferred("disabled", true)
 		SlashDetect.set_deferred("disabled", true)
@@ -89,7 +88,7 @@ func death():
 func powerups(power_type: String):
 	match power_type:
 		"speed boost":
-			speed_boost == 1.2
+			speed_boost = 1.2
 			print(speed_boost)
 		"health up":
 			if health < 80: #change later
@@ -97,7 +96,7 @@ func powerups(power_type: String):
 		"strength":
 			Playerstats.strength *=1.2 #increaser strength aka damage.
 		"gold up":
-			gold_multiplier == 2 #Double coins
+			Playerstats.gold_multiplier += 1 #Double coins
 		"fortitude":
 			Playerstats.fortitude += 3 #increase fortitude
 	print(power_type)
@@ -107,7 +106,7 @@ func debugkey():
 	if Input.is_action_just_pressed("debug"):
 		print(attacking) 
 		print(speed_boost)
-		
+		print(Economy.gold, "GOLD")
 #region Dealdamage/takedamage
 
 #damage function
