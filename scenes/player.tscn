@@ -768,6 +768,7 @@ shape = SubResource("CircleShape2D_ur7pv")
 debug_color = Color(0.776471, 1, 0, 0.419608)
 
 [node name="HUD" parent="." instance=ExtResource("7_fjrip")]
+z_index = 10
 offset_left = -313.0
 offset_top = -174.0
 offset_right = -313.0
