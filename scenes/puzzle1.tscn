@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cgqtgywpje58u"]
+[gd_scene load_steps=36 format=4 uid="uid://cgqtgywpje58u"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_ju6br"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_cysrh"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://2udqploowfy0" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Plant.png" id="8_3i6hn"]
 [ext_resource type="Texture2D" uid="uid://daujbpeev351y" path="res://Character textures/dungeon_floor.png" id="9_3v5c3"]
 [ext_resource type="Texture2D" uid="uid://bhfm416rnryxr" path="res://Dungeon Free/dungeon_sprite_sheet.png" id="10_hhjmd"]
+[ext_resource type="PackedScene" uid="uid://c45iybd2i4drs" path="res://door.tscn" id="11_8jut7"]
+[ext_resource type="PackedScene" uid="uid://16ius7160l1s" path="res://chest.tscn" id="12_lfoye"]
+[ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="13_2kv06"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3v5c3"]
 texture = ExtResource("1_ju6br")
@@ -3347,3 +3350,27 @@ tile_set = SubResource("TileSet_2jboh")
 
 [node name="foliage" type="TileMapLayer" parent="dungeon/tile canister/floor/walls/shadows/props/lights"]
 tile_set = SubResource("TileSet_75fhr")
+
+[node name="door open" parent="." instance=ExtResource("11_8jut7")]
+position = Vector2(592, 144)
+
+[node name="chest" parent="." instance=ExtResource("12_lfoye")]
+position = Vector2(112, 670)
+
+[node name="chest2" parent="." instance=ExtResource("12_lfoye")]
+position = Vector2(-335, 189)
+
+[node name="chest3" parent="." instance=ExtResource("12_lfoye")]
+position = Vector2(48, -135)
+
+[node name="chest4" parent="." instance=ExtResource("12_lfoye")]
+position = Vector2(597, -359)
+
+[node name="chest5" parent="." instance=ExtResource("12_lfoye")]
+position = Vector2(1330, -281)
+
+[node name="chest6" parent="." instance=ExtResource("12_lfoye")]
+position = Vector2(1474, 937)
+
+[node name="player" parent="." instance=ExtResource("13_2kv06")]
+position = Vector2(592, 553)

@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Economy="*res://economy.gd"
-Playerstats="*res://playerstats.gd"
+Playerstats="*res://scripts/playerscripts/playerstats.gd"
 
 [display]
 

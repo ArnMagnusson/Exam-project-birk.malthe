@@ -5,3 +5,5 @@ extends Node2D
 @export var constitution = 1 # every point +5 health
 @export var speedbonus = 0
 @export var crit = 0
+
+@export var key = false
