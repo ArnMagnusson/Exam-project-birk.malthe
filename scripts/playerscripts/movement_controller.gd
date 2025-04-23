@@ -41,7 +41,6 @@ func _process(delta):
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 	)
-	
 #region movement animation
 	if attacking == false: #hvis attacking er false, movement unlocked.
 		velocity = direction * speed * speed_boost
@@ -66,7 +65,12 @@ func _process(delta):
 			speed = 60 * speed_boost
 	move_and_slide()
 #endregion
-	
+#collision rotation manage code
+	if Input.is_action_pressed("left"):
+		LungeDetect.position.x = -32
+	if  Input.is_action_just_pressed("right"):
+		LungeDetect.position.x = 32
+
 #region attack animation region
 func attack():
 	if Input.is_action_just_pressed("left_click"):
