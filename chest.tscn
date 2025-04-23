@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://16ius7160l1s"]
+[gd_scene load_steps=4 format=3 uid="uid://16ius7160l1s"]
 
 [ext_resource type="Script" uid="uid://blc6184h5pigj" path="res://chest.gd" id="1_twpm2"]
+[ext_resource type="Texture2D" uid="uid://bo40ksuj8185e" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/chest.png" id="2_8uwsg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0e0a3"]
 radius = 34.0
@@ -9,10 +10,14 @@ radius = 34.0
 script = ExtResource("1_twpm2")
 
 [node name="chest_area" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chest_area"]
 shape = SubResource("CircleShape2D_0e0a3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+texture = ExtResource("2_8uwsg")
 
 [connection signal="body_entered" from="chest_area" to="." method="_on_chest_area_body_entered"]

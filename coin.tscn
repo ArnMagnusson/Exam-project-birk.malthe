@@ -13,6 +13,8 @@ script = ExtResource("1_0t63x")
 texture = ExtResource("1_d5gmh")
 
 [node name="pickup_area" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pickup_area"]
 shape = SubResource("CircleShape2D_0t63x")

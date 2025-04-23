@@ -3,14 +3,18 @@
 [ext_resource type="Script" uid="uid://dxic83bds2qoo" path="res://treasure.gd" id="1_dubxd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qkt42"]
-radius = 50.0
+radius = 29.0172
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dubxd")
 
-[node name="chest_area" type="Area2D" parent="."]
+[node name="pickup_area" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 33
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chest_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickup_area"]
 shape = SubResource("CircleShape2D_qkt42")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="pickup_area" to="." method="_on_pickup_area_body_entered"]
