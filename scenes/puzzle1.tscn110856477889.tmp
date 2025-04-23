@@ -3577,30 +3577,18 @@ position = Vector2(601, 331)
 
 [node name="treasure" parent="." instance=ExtResource("15_683ma")]
 position = Vector2(120, 671)
-treasure_type = null
-icon_dict = null
 
 [node name="treasure2" parent="." instance=ExtResource("15_683ma")]
 position = Vector2(-336, 194)
-treasure_type = null
-icon_dict = null
 
 [node name="treasure3" parent="." instance=ExtResource("15_683ma")]
 position = Vector2(48, -123)
-treasure_type = null
-icon_dict = null
 
 [node name="treasure4" parent="." instance=ExtResource("15_683ma")]
 position = Vector2(592, -360)
-treasure_type = null
-icon_dict = null
 
 [node name="treasure5" parent="." instance=ExtResource("15_683ma")]
 position = Vector2(1480, 936)
-treasure_type = null
-icon_dict = null
 
 [node name="treasure6" parent="." instance=ExtResource("15_683ma")]
 position = Vector2(1328, -281)
-treasure_type = null
-icon_dict = null

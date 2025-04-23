@@ -3673,7 +3673,7 @@ sources/0 = SubResource("TileSetAtlasSource_nvf5v")
 [sub_resource type="CircleShape2D" id="CircleShape2D_24it5"]
 radius = 34.0
 
-[node name="outside" type="Node2D"]
+[node name="outside2" type="Node2D"]
 
 [node name="tile canister" type="Node2D" parent="."]
 

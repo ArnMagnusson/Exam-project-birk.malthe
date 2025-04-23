@@ -10,7 +10,7 @@ var can_attack = false #can attack player
 @onready var character_body_2d: CharacterBody2D = $"ghost."
 
 func _ready():
-	get_tree().get_root().get_node("Mainnode").register_enemy() #register enemy
+		get_tree().get_root().get_node("Mainnode").register_enemy() #register enemy
 
 #movement script
 func _physics_process(delta):
