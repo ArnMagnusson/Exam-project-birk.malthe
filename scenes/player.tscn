@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d4hyd7xdmi2bg"]
+[gd_scene load_steps=21 format=3 uid="uid://d4hyd7xdmi2bg"]
 
 [ext_resource type="Script" uid="uid://7bvqack2dey8" path="res://scripts/playerscripts/movement_controller.gd" id="1_bs5m7"]
 [ext_resource type="Texture2D" uid="uid://bx5xjano3ljq" path="res://Character textures/glaive warrior!/glaivespritesheets/runanimation.png" id="3_dqkch"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bhhwvott0yuaj" path="res://SFX/Footsteps Loop 1 (Rpg).wav" id="6_smehm"]
 [ext_resource type="PackedScene" uid="uid://dhgcgbtqhsnpm" path="res://scenes/UI/HUD.tscn" id="7_fjrip"]
 [ext_resource type="AudioStream" uid="uid://bsat83br5qhid" path="res://SFX/719637__zapsplatcom__fast-whoosh-bamboo-swoosh-through-air-version-2.wav" id="7_ur7pv"]
+[ext_resource type="Script" uid="uid://me2rfhyp4nj0" path="res://scenes/lungedetectionfacingposistion.gd" id="9_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://dyhcqh6wa6bkg" path="res://Character textures/glaive warrior!/glaivespritesheets/glaiv warrior attack sprite sheet.png" id="35_bj30b"]
 
 [sub_resource type="Animation" id="Animation_t4otl"]
@@ -750,6 +751,7 @@ frame = 1
 [node name="Lungedetection" type="Area2D" parent="WeaponDetection"]
 collision_layer = 8
 collision_mask = 8
+script = ExtResource("9_y4r1p")
 
 [node name="lungedetectionshape" type="CollisionShape2D" parent="WeaponDetection/Lungedetection"]
 position = Vector2(32, -5.5)
@@ -780,6 +782,9 @@ zoom = Vector2(3, 3)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(143, -8)
 volume_db = -5.403
+
+[node name="healtimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="area_entered" from="Enemyhit" to="." method="_on_enemyhit_area_entered"]
 [connection signal="body_entered" from="WeaponDetection/Lungedetection" to="." method="_on_lungedetection_body_entered"]

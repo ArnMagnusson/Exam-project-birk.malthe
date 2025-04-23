@@ -3098,6 +3098,14 @@ tile_set = SubResource("TileSet_bcvtv")
 
 [node name="player" parent="." instance=ExtResource("9_bkknd")]
 position = Vector2(384, 919)
+health = 100
+max_health = 100
+speed = 60
+speed_boost = 1
+dash_speed = 40
+LungeDMG = 30
+SlashDMG = 15
+damage_taken = false
 
 [node name="slime1" parent="." instance=ExtResource("10_ps85p")]
 position = Vector2(436, 729)

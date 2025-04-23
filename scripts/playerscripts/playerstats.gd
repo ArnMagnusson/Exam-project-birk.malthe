@@ -8,3 +8,5 @@ extends Node2D
 @export var gold_multiplier = 1
 
 @export var key = false
+
+@export var enemies = 0
