@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cgqtgywpje58u"]
+[gd_scene load_steps=37 format=4 uid="uid://cgqtgywpje58u"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_ju6br"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_cysrh"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://16ius7160l1s" path="res://chest.tscn" id="12_lfoye"]
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="13_2kv06"]
 [ext_resource type="PackedScene" uid="uid://c5fj3oexyl7d3" path="res://key.tscn" id="14_2kv06"]
-[ext_resource type="PackedScene" uid="uid://ond0vlapad4m" path="res://treasure.tscn" id="15_683ma"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3v5c3"]
 texture = ExtResource("1_ju6br")
@@ -3466,33 +3465,3 @@ position = Vector2(593, 548)
 
 [node name="key" parent="." instance=ExtResource("14_2kv06")]
 position = Vector2(601, 331)
-
-[node name="treasure" parent="." instance=ExtResource("15_683ma")]
-position = Vector2(120, 671)
-treasure_type = null
-icon_dict = null
-
-[node name="treasure2" parent="." instance=ExtResource("15_683ma")]
-position = Vector2(-336, 194)
-treasure_type = null
-icon_dict = null
-
-[node name="treasure3" parent="." instance=ExtResource("15_683ma")]
-position = Vector2(48, -123)
-treasure_type = null
-icon_dict = null
-
-[node name="treasure4" parent="." instance=ExtResource("15_683ma")]
-position = Vector2(592, -360)
-treasure_type = null
-icon_dict = null
-
-[node name="treasure5" parent="." instance=ExtResource("15_683ma")]
-position = Vector2(1480, 936)
-treasure_type = null
-icon_dict = null
-
-[node name="treasure6" parent="." instance=ExtResource("15_683ma")]
-position = Vector2(1328, -281)
-treasure_type = null
-icon_dict = null
