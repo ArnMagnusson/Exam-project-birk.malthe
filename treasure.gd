@@ -27,7 +27,7 @@ func random():
 	random_index = randi() % keys.size()
 	var random_key = keys[random_index]
 	print(random_index)
-	icon_dict.erase(random_key)w
+	icon_dict.erase(random_key)
 	print("Loot left: %s" % icon_dict)
 	
 #itemspawn, had to make a bunch of if statements otherwise it would spawn everything for some reason
