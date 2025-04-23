@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhgcgbtqhsnpm"]
+[gd_scene load_steps=7 format=3 uid="uid://dhgcgbtqhsnpm"]
 
 [ext_resource type="Script" uid="uid://btg8rtjoy6fvt" path="res://scripts/UI/hud.gd" id="1_5fyfn"]
 [ext_resource type="Texture2D" uid="uid://csgaugrm4eoba" path="res://Character textures/UI/healthbar empty.png" id="2_7n4fj"]
+[ext_resource type="Texture2D" uid="uid://dsumd1q1atm5g" path="res://Character textures/UI/Coins.png" id="3_vphgt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ip4n"]
 bg_color = Color(0.690492, 0.0418487, 0.0910925, 1)
@@ -45,9 +46,38 @@ theme_override_styles/fill = SubResource("StyleBoxEmpty_l8xe2")
 value = 100.0
 show_percentage = false
 
-[node name="Portrait?" type="Control" parent="."]
+[node name="gold" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -29.0
-offset_top = 80.0
-offset_right = 11.0
-offset_bottom = 120.0
+offset_top = 27.0
+offset_right = 40.0
+offset_bottom = 67.0
+
+[node name="Label" type="Label" parent="gold"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 3.0
+offset_right = 75.0
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 40
+text = "20"
+
+[node name="coin sprite" type="Sprite2D" parent="gold"]
+position = Vector2(19, 17)
+texture = ExtResource("3_vphgt")
+
+[node name="enemycounter" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="enemylabel" type="Label" parent="enemycounter"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 63.0
+offset_right = 75.0
+offset_bottom = 86.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 40
+
+[node name="enemy sprite" type="Sprite2D" parent="enemycounter"]

@@ -158,5 +158,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [connection signal="body_entered" from="attack_detection" to="." method="_on_attack_detection_body_entered"]
+[connection signal="body_exited" from="attack_detection" to="." method="_on_attack_detection_body_exited"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

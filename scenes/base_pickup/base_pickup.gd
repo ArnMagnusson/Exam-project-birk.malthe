@@ -19,7 +19,7 @@ var icon_dict = {
 	
 func _ready():
 	randomize() #random seed for RNG
-	#random() #randomizes the power up
+	random() #randomizes the power up
 		#hvis der ikke er valgt en power icon i inspector sæt power_icon til icon_dict[power_type]
 		#Specifikke texture eksempel strengthup valgt i inspectoren ingen manuelt sat texture. 
 		#Giver strength up texture automatisk
