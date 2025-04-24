@@ -3015,4 +3015,7 @@ collision_mask = 33
 position = Vector2(608, 254)
 shape = SubResource("CircleShape2D_chifo")
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.4
+
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]

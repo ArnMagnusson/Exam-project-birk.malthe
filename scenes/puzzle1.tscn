@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=4 uid="uid://cgqtgywpje58u"]
 
-[ext_resource type="Script" uid="uid://yyod7hltcwjt" path="res://scenes/puzzle_1.gd" id="1_683ma"]
+[ext_resource type="Script" path="res://scenes/puzzle_1.gd" id="1_683ma"]
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_ju6br"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_cysrh"]
 [ext_resource type="Texture2D" uid="uid://b4dinaig5frhk" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Wall.png" id="3_3v5c3"]

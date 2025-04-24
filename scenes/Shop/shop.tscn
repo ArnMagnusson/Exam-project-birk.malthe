@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c45ymkrlcks1s"]
+[gd_scene load_steps=39 format=4 uid="uid://c45ymkrlcks1s"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_xqmyw"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_sw5c6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="11_1v8qu"]
 [ext_resource type="Script" uid="uid://g3vkevsjrmfj" path="res://scripts/shop/shopnode2d.gd" id="12_44xle"]
 [ext_resource type="PackedScene" uid="uid://c5vdna6q7hwsq" path="res://scenes/Shop/ShopHud.tscn" id="13_j512n"]
+[ext_resource type="Script" uid="uid://uhtwt0t08l1u" path="res://scenes/Shop/teleporter.gd" id="14_5difm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_il0eq"]
 texture = ExtResource("1_xqmyw")
@@ -3673,6 +3674,9 @@ sources/0 = SubResource("TileSetAtlasSource_nvf5v")
 [sub_resource type="CircleShape2D" id="CircleShape2D_24it5"]
 radius = 34.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j512n"]
+radius = 47.0
+
 [node name="outside2" type="Node2D"]
 
 [node name="tile canister" type="Node2D" parent="."]
@@ -3743,5 +3747,16 @@ offset_top = 409.0
 offset_right = 453.0
 offset_bottom = 409.0
 
+[node name="teleporter" type="Node2D" parent="."]
+script = ExtResource("14_5difm")
+
+[node name="teleporterDetec" type="Area2D" parent="teleporter"]
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleporter/teleporterDetec"]
+position = Vector2(528, 97)
+shape = SubResource("CircleShape2D_j512n")
+
 [connection signal="body_entered" from="shopnode/Area2D" to="shopnode" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="shopnode/Area2D" to="shopnode" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="teleporter/teleporterDetec" to="teleporter" method="_on_teleporter_detec_body_entered"]
