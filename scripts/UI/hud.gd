@@ -16,5 +16,5 @@ func howmanyenemies():
 	if get_tree().get_nodes_in_group("Enemies").size():
 		$enemycounter/enemylabel.text = str(get_tree().get_nodes_in_group("Enemies").size())
 		
-	if get_tree().get_nodes_in_group("Enemies").size() < 0:
+	if get_tree().get_nodes_in_group("Enemies").size() < 1:
 		$enemycounter.hide()
