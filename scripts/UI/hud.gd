@@ -13,8 +13,8 @@ func howmuchgold():
 	$gold/Label.text = str(Economy.gold)
 	
 func howmanyenemies():
-	if Playerstats.enemies > 0:
-		$enemycounter/enemylabel.text = str(Playerstats.enemies)
+	if get_tree().get_nodes_in_group("Enemies").size():
+		$enemycounter/enemylabel.text = str(get_tree().get_nodes_in_group("Enemies").size())
 		
-	if Playerstats.enemies < 0:
+	if get_tree().get_nodes_in_group("Enemies").size() < 0:
 		$enemycounter.hide()

@@ -10,8 +10,8 @@ var can_attack = false #can attack player
 @onready var character_body_2d: CharacterBody2D = $"ghost."
 
 func _ready():
-		get_tree().get_root().get_node("Mainnode").register_enemy() #register enemy
-
+	#get_tree().get_root().get_node("Mainnode").register_enemy() #register enemy
+	pass
 #movement script
 func _physics_process(delta):
 	#checks if there is a player to chase
@@ -46,7 +46,7 @@ func death():
 	$Sprite2D.hide()
 	$TextureRect.visible = true
 	player = null
-	get_tree().get_root().get_node("Mainnode").unregister_enemy()
+	#get_tree().get_root().get_node("Mainnode").unregister_enemy()
 	await get_tree().create_timer(0.5).timeout
 	queue_free()
 
