@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Economy="*res://economy.gd"
 Playerstats="*res://scripts/playerscripts/playerstats.gd"
 Loadmanager="*res://scripts/loadmanager.gd"
+LootManager="*res://loot_manager.gd"
 
 [display]
 
