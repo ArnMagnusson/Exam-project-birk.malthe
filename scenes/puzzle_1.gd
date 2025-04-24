@@ -1,14 +1,5 @@
 extends Node2D
 
-func _ready():
-	pass
-
-func _process(delta):
-	pass
-
-func unregister_enemy():
-	Playerstats.enemies -= 1
-	print(Playerstats.enemies, "enemy count")
-
-func register_enemy():
-	Playerstats.enemies += 1
+func _on_exit_body_entered(body: Node2D) -> void:
+	Loadmanager.next_scene = "res://scenes/combat.tscn" #sets loadmanager next scene to next scene
+	get_tree().change_scene_to_file("res://scenes/loading_screen.tscn") #loads loading screen
