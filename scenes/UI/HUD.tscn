@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhgcgbtqhsnpm"]
+[gd_scene load_steps=8 format=3 uid="uid://dhgcgbtqhsnpm"]
 
 [ext_resource type="Script" uid="uid://btg8rtjoy6fvt" path="res://scripts/UI/hud.gd" id="1_5fyfn"]
 [ext_resource type="Texture2D" uid="uid://csgaugrm4eoba" path="res://Character textures/UI/healthbar empty.png" id="2_7n4fj"]
 [ext_resource type="Texture2D" uid="uid://dsumd1q1atm5g" path="res://Character textures/UI/Coins.png" id="3_vphgt"]
+[ext_resource type="Texture2D" uid="uid://bsbsw0l0fe66c" path="res://enemies/fu3go/sprite_00.png" id="4_5ip4n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ip4n"]
 bg_color = Color(0.690492, 0.0418487, 0.0910925, 1)
@@ -81,3 +82,5 @@ scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 40
 
 [node name="enemy sprite" type="Sprite2D" parent="enemycounter"]
+position = Vector2(17, 75)
+texture = ExtResource("4_5ip4n")

@@ -10,8 +10,8 @@ var can_attack = false
 @onready var character_body_2d: CharacterBody2D = $"slime"
 
 func _ready():
-	get_tree().get_root().get_node("Mainnode").register_enemy() #register enemy
-
+	#get_tree().get_root().get_node("Mainnode").register_enemy() #register enemy
+	pass
 #movement script
 func _physics_process(delta):
 	#checks if there is a player to chase
@@ -51,7 +51,7 @@ func death():
 	$TextureRect.visible = true
 	player = null
 	$attack_detection.set_deferred("disable_mode", true)
-	get_tree().get_root().get_node("Mainnode").unregister_enemy() #unregister enemy
+	#get_tree().get_root().get_node("Mainnode").unregister_enemy() #unregister enemy
 	await get_tree().create_timer(0.3).timeout
 	queue_free()
 
