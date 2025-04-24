@@ -1,21 +1,28 @@
 extends CharacterBody2D
 
+
+@onready var main = get_tree().get_root().get_node("node2D")
+@onready var fireballpro = load("res://scenes/bossscene/fireball.tscn")
 #variables for damage, health, speed & gold + player variables
 @export var damage = 30
 @export var health = 50
 @export var speed = 35
 @export var gold_reward = 20
 var player = null
+var target = null
+var target_located = false
 var can_attack = false
 @onready var character_body_2d: CharacterBody2D = $"slime"
 
 func _ready():
-	#get_tree().get_root().get_node("Mainnode").register_enemy() #register enemy
 	pass
-#movement script
+	#get_tree().get_root().get_node("Mainnode").register_enemy() #register enemy
+	#movement script
 func _physics_process(delta):
+	fireball()
 	#checks if there is a player to chase
 	if player:
+		# Set the global rotation to the angle of the direction vector
 		#determines direction based on players position and slimes position, normalized() makes it into a vector
 		var direction = (player.global_position - global_position).normalized()
 		#sets velocity equal to direction * movement speed to determine where and how fast the slime goes
@@ -24,14 +31,27 @@ func _physics_process(delta):
 		$AnimationPlayer.play("slime_walk")
 		move_and_slide()
 	
+func fireball():
+	if target:
+		var direction = (target.global_position - global_position).normalized()
+		$rayball.rotation = direction.angle()
+		await get_tree().create_timer(1).timeout
+		if $rayball.is_colliding():
+			target_located = true
+			var collider = $rayball.get_collider()
+			if collider.has_method("take_damage"):
+				collider.take_damage(damage)
+
 
 #determine player when they enter detection_area
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	player = body
-
+	target = body
+	
 #redetermine player when they leave detection_area
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	player = null
+	target = null
 
 #slime take damage and die function
 func take_damage(damage_ammount):

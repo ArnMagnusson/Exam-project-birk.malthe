@@ -23,6 +23,7 @@ var attacking = false
 @onready var SlashDetect = $WeaponDetection/slashdetection/slashdetectioncolish
 @onready var hud = $HUD
 @export var damage_taken = false
+
 #endregion
 
 func _ready():
@@ -36,7 +37,6 @@ func _ready():
 func _process(delta):
 	attack()
 	debugkey()
-	
 	#Directions, left, right, up and down
 	var direction = Vector2(
 		Input.get_axis("left", "right"),
