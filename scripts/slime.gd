@@ -46,7 +46,7 @@ func death():
 	var instance = powerupscene.instantiate()
 	instance.global_position = global_position
 	get_parent().add_child(instance)
-	Economy.Gold_dropped(gold_reward)
+	Economy.Gold_dropped(gold_reward * Playerstats.gold_multiplier)
 	$Sprite2D.hide()
 	$TextureRect.visible = true
 	player = null
