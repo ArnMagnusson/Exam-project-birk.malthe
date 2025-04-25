@@ -10,7 +10,6 @@ extends CharacterBody2D
 #general stats
 @export var speed = 60
 @export var speed_boost = 1
-@export var dash_speed = 40
 @export var LungeDMG = 30
 @export var SlashDMG = 15
 
@@ -44,7 +43,7 @@ func _process(delta):
 	)
 #region movement animation
 	if attacking == false: #hvis attacking er false, movement unlocked.
-		velocity = direction * speed * speed_boost
+		velocity = (direction * speed) + direction.normalized() * Playerstats.speedbonus*1.2 #normalises movement, while giving speedbonus
 		if direction.length() > 0:
 			var facing_left = direction.x < 0
 			$Sprite2D.flip_h = facing_left #main sprite
@@ -63,7 +62,7 @@ func _process(delta):
 		speed = 0
 	else:
 		if attacking == false: #unlocks movement when not attacking
-			speed = 60 * Playerstats.speedbonus
+			speed = 60
 	move_and_slide()
 #endregion
 #collision rotation manage code
