@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://5yg65jt4ag4x"]
+[gd_scene load_steps=30 format=4 uid="uid://5yg65jt4ag4x"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_c5sxc"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_jn0fp"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="9_bkknd"]
 [ext_resource type="PackedScene" uid="uid://bmnnsys10mvbb" path="res://scenes/slime.tscn" id="10_ps85p"]
 [ext_resource type="PackedScene" uid="uid://dq2ffc151d0ey" path="res://ghost.tscn" id="11_ps85p"]
-[ext_resource type="PackedScene" uid="uid://bivg8pt1jqcq" path="res://scenes/base_pickup/Base_pickup.tscn" id="12_tmlba"]
 
 [sub_resource type="GDScript" id="GDScript_tmlba"]
 script/source = "extends Node2D
@@ -3014,8 +3013,5 @@ shape = SubResource("CircleShape2D_chifo")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.4
-
-[node name="pickup" parent="." instance=ExtResource("12_tmlba")]
-position = Vector2(507, 987)
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]

@@ -17,18 +17,19 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 23.0
-offset_right = 6.0
-offset_bottom = 23.0
+offset_left = -111.0
+offset_top = -8.0
+offset_right = -111.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="button controller" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 57.0
-offset_right = 97.0
-offset_bottom = 40.0
+offset_left = 167.0
+offset_top = 7.0
+offset_right = 207.0
+offset_bottom = 47.0
 script = ExtResource("1_3f3wn")
 
 [node name="gloves" type="TextureButton" parent="button controller"]
@@ -36,6 +37,7 @@ layout_mode = 0
 offset_left = -56.0
 offset_right = -8.0
 offset_bottom = 48.0
+action_mode = 0
 texture_normal = ExtResource("1_ubd6k")
 
 [node name="Gauntlet" type="Sprite2D" parent="button controller/gloves"]
@@ -232,15 +234,18 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="goldbackground" type="Sprite2D" parent="Control"]
+visible = false
 position = Vector2(26, -10)
 texture = ExtResource("3_ar6qn")
 
 [node name="coin" type="Sprite2D" parent="Control"]
+visible = false
 position = Vector2(11, -10)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("4_3f3wn")
 
 [node name="Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 14.0
 offset_top = -15.0

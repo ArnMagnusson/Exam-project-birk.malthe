@@ -3,8 +3,8 @@ extends Control
 func _ready():
 	howmuchgold()
 
-
 func _on_gloves_pressed():
+	print("yessir")
 	if Economy.gold > 120: #if above 120 gold allow buy
 		Economy.gold -= 120
 		Playerstats.strength += 2
