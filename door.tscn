@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c45iybd2i4drs"]
+[gd_scene load_steps=5 format=3 uid="uid://c45iybd2i4drs"]
 
 [ext_resource type="Script" uid="uid://gje4xihj74gk" path="res://node_2d.gd" id="1_ba8gm"]
 [ext_resource type="Texture2D" uid="uid://bnhfd2vkcv55m" path="res://Dungeon Free/door.png" id="2_v6xrn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6xrn"]
 radius = 38.0132
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(32, 32)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ba8gm")
@@ -18,5 +21,10 @@ shape = SubResource("CircleShape2D_v6xrn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_v6xrn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_v6xrn")
 
 [connection signal="body_entered" from="door_area" to="." method="_on_door_area_body_entered"]

@@ -105,6 +105,7 @@ visible = false
 
 [node name="stats" type="Label" parent="Control/statscreen"]
 anchors_preset = -1
+anchor_left = -0.0354167
 anchor_right = -0.0354167
 offset_left = 1693.0
 offset_top = 16.0
