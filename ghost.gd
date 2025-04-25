@@ -42,7 +42,7 @@ func take_damage(damage_ammount):
 
 #death function, removes slime & death animation
 func death():
-	Economy.Gold_dropped(gold_reward)
+	Economy.Gold_dropped(gold_reward*Playerstats.gold_multiplier)
 	$Sprite2D.hide()
 	$TextureRect.visible = true
 	player = null

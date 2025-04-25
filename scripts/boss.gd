@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var damage = 30
 @export var health = 50
 @export var speed = 35
-@export var gold_reward = 20
+@export var gold_reward = 20 * Playerstats.gold_multiplier
 var player = null
 var target = null
 var target_located = false
