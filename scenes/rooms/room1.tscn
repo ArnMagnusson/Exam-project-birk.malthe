@@ -2978,7 +2978,7 @@ tile_map_data = PackedByteArray("AAA1ADYAAAAFAAIAAAA1ADcAAAAFAAMAAAA2ADYAAAAGAAI
 tile_set = SubResource("TileSet_bcvtv")
 
 [node name="player" parent="." instance=ExtResource("9_bkknd")]
-position = Vector2(384, 919)
+position = Vector2(610, 984)
 
 [node name="slime1" parent="." groups=["Enemies"] instance=ExtResource("10_ps85p")]
 position = Vector2(436, 729)

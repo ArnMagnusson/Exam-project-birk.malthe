@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt0mi0qw4tphw"]
+
+[ext_resource type="Script" uid="uid://g2moy7gotty2" path="res://deathmenu.gd" id="1_rq560"]
+[ext_resource type="FontFile" uid="uid://c1ng3mtxhupmw" path="res://fonts/DungeonFont.ttf" id="2_2lqub"]
+[ext_resource type="Texture2D" uid="uid://bkpuqcoofp1ub" path="res://Pictures/pixelgraveyard.png" id="2_dvmb2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rq560")
+
+[node name="deathscreen" type="CanvasLayer" parent="Control"]
+
+[node name="TextureRect" type="TextureRect" parent="Control/deathscreen"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_dvmb2")
+
+[node name="deathbox" type="ColorRect" parent="Control/deathscreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -396.5
+offset_right = 296.0
+offset_bottom = 396.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.785356, 0.553715, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="deathborder" type="ReferenceRect" parent="Control/deathscreen"]
+offset_left = 664.0
+offset_top = 144.0
+offset_right = 1256.0
+offset_bottom = 937.0
+border_color = Color(0.872597, 0.610654, 1.15514e-06, 0.658824)
+border_width = 10.0
+metadata/_edit_use_anchors_ = true
+
+[node name="dungeonhero" type="Label" parent="Control/deathscreen"]
+offset_left = 685.0
+offset_top = 175.0
+offset_right = 1233.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("2_2lqub")
+theme_override_font_sizes/font_size = 100
+text = "Dungeon Hero"
+metadata/_edit_use_anchors_ = true
+
+[node name="restartbutton" type="Button" parent="Control/deathscreen"]
+offset_left = 760.0
+offset_top = 399.0
+offset_right = 1152.0
+offset_bottom = 526.0
+theme_override_fonts/font = ExtResource("2_2lqub")
+theme_override_font_sizes/font_size = 100
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="titlescreenbutton" type="Button" parent="Control/deathscreen"]
+offset_left = 760.0
+offset_top = 576.0
+offset_right = 1152.0
+offset_bottom = 703.0
+theme_override_fonts/font = ExtResource("2_2lqub")
+theme_override_font_sizes/font_size = 80
+text = "Title Screen"
+metadata/_edit_use_anchors_ = true
+
+[node name="quitbutton" type="Button" parent="Control/deathscreen"]
+offset_left = 761.0
+offset_top = 764.0
+offset_right = 1153.0
+offset_bottom = 891.0
+theme_override_fonts/font = ExtResource("2_2lqub")
+theme_override_font_sizes/font_size = 100
+text = "Quit Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="youdied" type="Label" parent="Control/deathscreen"]
+offset_left = 811.0
+offset_top = 265.0
+offset_right = 1101.0
+offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("2_2lqub")
+theme_override_font_sizes/font_size = 80
+text = "You Died"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/deathscreen/restartbutton" to="Control" method="_on_restartbutton_pressed"]
+[connection signal="pressed" from="Control/deathscreen/titlescreenbutton" to="Control" method="_on_titlescreenbutton_pressed"]
+[connection signal="pressed" from="Control/deathscreen/quitbutton" to="Control" method="_on_quitbutton_pressed"]

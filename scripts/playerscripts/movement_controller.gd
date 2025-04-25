@@ -26,7 +26,6 @@ var attacking = false
 #endregion
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	VFXL.hide()
 	VFXS.hide()
 	LungeDetect.set_deferred("disabled", true)
@@ -89,6 +88,7 @@ func attack():
 
 func death():
 	print("dead")
+	get_tree().change_scene_to_file("res://deathmenu.tscn")
 	queue_free()
 	
 func powerups(power_type: String):

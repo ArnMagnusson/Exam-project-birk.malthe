@@ -785,7 +785,7 @@ volume_db = -5.403
 [node name="healtimer" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="Node2D" parent="." instance=ExtResource("10_y4r1p")]
+[node name="pausescreen" parent="." instance=ExtResource("10_y4r1p")]
 
 [connection signal="area_entered" from="Enemyhit" to="." method="_on_enemyhit_area_entered"]
 [connection signal="body_entered" from="WeaponDetection/Lungedetection" to="." method="_on_lungedetection_body_entered"]

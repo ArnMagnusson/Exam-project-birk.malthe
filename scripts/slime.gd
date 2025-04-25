@@ -62,6 +62,8 @@ func _on_attack_detection_body_entered(body: Node2D) -> void:
 		if body.has_method("take_damage"): #duck typing, does it quack like a duck its a duck
 			body.take_damage(damage)
 			player = null
+			if body == null or !body.is_inside_tree():
+				break
 			await get_tree().create_timer(1).timeout #damage immunity on player time
 			player = body
 
