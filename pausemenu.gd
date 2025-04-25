@@ -15,6 +15,7 @@ var pause
 func _process(delta: float) -> void:
 	update_stats()
 	if Input.is_action_pressed("esc"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		print("paused")
 		pausescreen.visible = true
 		statscreen.visible = true
@@ -23,12 +24,14 @@ func _process(delta: float) -> void:
 		
 
 func _on_continuebutton_pressed() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	pausescreen.hide()
 	statscreen.hide()
 	pause = false
 	get_tree().paused = false
 
 func _on_restartbutton_pressed() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
 	Economy.gold = 0
 	Playerstats.constitution = 0

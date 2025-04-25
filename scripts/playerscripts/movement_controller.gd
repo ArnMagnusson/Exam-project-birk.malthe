@@ -27,6 +27,7 @@ var attacking = false
 #endregion
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	VFXL.hide()
 	VFXS.hide()
 	LungeDetect.set_deferred("disabled", true)

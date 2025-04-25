@@ -2,10 +2,12 @@ extends Control
 @onready var deathscreen: CanvasLayer = $deathscreen
 
 @warning_ignore("unused_parameter")
-func _process(delta: float) -> void:
-	pass
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 
 func _on_restartbutton_pressed() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Economy.gold = 0
 	Playerstats.constitution = 0
 	Playerstats.fortitude = 1

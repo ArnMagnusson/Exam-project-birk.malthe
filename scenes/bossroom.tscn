@@ -5278,13 +5278,6 @@ shape = SubResource("CircleShape2D_7cw6h")
 
 [node name="player" parent="." instance=ExtResource("12_gl4p8")]
 position = Vector2(514, 825)
-health = 100
-heal_speed = 5
-speed_boost = 1
-dash_speed = 40
-LungeDMG = 30
-SlashDMG = 15
-damage_taken = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("13_7cw6h")]
 position = Vector2(511, 615)
