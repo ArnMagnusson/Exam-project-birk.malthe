@@ -2,9 +2,10 @@ extends CharacterBody2D
 
 #region inspector stuff, like onready, var
 @onready var enemyhit = $Enemyhit
+@onready var pausescreen: Node2D = $pausescreen
 #stats
 @export var health = 100
-@export var max_health = 100
+@export var max_health = 100 + (Playerstats.constitution * 5)
 @export var heal_speed = 5 #heal speed how much hp heal every frame
 #general stats
 @export var speed = 60
@@ -62,7 +63,7 @@ func _process(delta):
 		speed = 0
 	else:
 		if attacking == false: #unlocks movement when not attacking
-			speed = 60 * speed_boost
+			speed = 60 * Playerstats.speedbonus
 	move_and_slide()
 #endregion
 #collision rotation manage code
@@ -94,18 +95,17 @@ func death():
 func powerups(power_type: String):
 	match power_type:
 		"speed boost":
-			speed_boost = 1.2
+			Playerstats.speedbonus += 1.2
 			print(speed_boost)
 		"health up":
-			if health < 80: #change later
-				health += 20 #basically regen
-				hud.updatehealthbar(health, max_health) #updates healthbar
+			Playerstats.constitution += 1
+			hud.updatehealthbar(health, max_health) #updates healthbar
 		"strength":
 			Playerstats.strength *=1.2 #increaser strength aka damage.
 		"gold up":
 			Playerstats.gold_multiplier += 1 #Double coins
 		"fortitude":
-			Playerstats.fortitude += 3 #increase fortitude
+			Playerstats.fortitude += 1 #increase fortitude
 	print(power_type)
 	
 #My debug function for key. I love it.

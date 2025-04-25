@@ -100,6 +100,146 @@ theme_override_font_sizes/font_size = 80
 text = "Paused"
 metadata/_edit_use_anchors_ = true
 
+[node name="statscreen" type="CanvasLayer" parent="Control"]
+visible = false
+
+[node name="stats" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_right = -0.0354167
+offset_left = 1693.0
+offset_top = 16.0
+offset_right = 1920.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+text = "Stats"
+metadata/_edit_use_anchors_ = true
+
+[node name="strlabel" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1694.0
+offset_top = 71.0
+offset_right = 1921.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+text = "str:"
+metadata/_edit_use_anchors_ = true
+
+[node name="forlabel" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1694.0
+offset_top = 130.0
+offset_right = 1921.0
+offset_bottom = 211.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+text = "for:"
+metadata/_edit_use_anchors_ = true
+
+[node name="conlabel" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1694.0
+offset_top = 171.0
+offset_right = 1921.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+text = "con:"
+metadata/_edit_use_anchors_ = true
+
+[node name="gold_multilabel" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1694.0
+offset_top = 220.0
+offset_right = 2019.0
+offset_bottom = 301.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+text = "multi:"
+metadata/_edit_use_anchors_ = true
+
+[node name="speedlabel" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1694.0
+offset_top = 269.0
+offset_right = 1921.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+text = "speed:"
+metadata/_edit_use_anchors_ = true
+
+[node name="strstat" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1802.0
+offset_top = 70.0
+offset_right = 2029.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+metadata/_edit_use_anchors_ = true
+
+[node name="forstat" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1802.0
+offset_top = 130.0
+offset_right = 2029.0
+offset_bottom = 211.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+metadata/_edit_use_anchors_ = true
+
+[node name="constat" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1808.0
+offset_top = 171.0
+offset_right = 2035.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+metadata/_edit_use_anchors_ = true
+
+[node name="goldstat" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1869.0
+offset_top = 220.0
+offset_right = 2096.0
+offset_bottom = 301.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+metadata/_edit_use_anchors_ = true
+
+[node name="speedstat" type="Label" parent="Control/statscreen"]
+anchors_preset = -1
+anchor_left = -0.0354167
+anchor_right = -0.0354167
+offset_left = 1868.0
+offset_top = 269.0
+offset_right = 2095.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 80
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Control/pausescreen/continuebutton" to="Control" method="_on_continuebutton_pressed"]
 [connection signal="pressed" from="Control/pausescreen/restartbutton" to="Control" method="_on_restartbutton_pressed"]
 [connection signal="pressed" from="Control/pausescreen/titlescreenbutton" to="Control" method="_on_titlescreenbutton_pressed"]
