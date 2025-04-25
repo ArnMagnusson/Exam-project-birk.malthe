@@ -27,7 +27,7 @@ func _physics_process(delta):
 
 #determine player when they enter detection_area
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	player = body
+		player = body
 
 #redetermine player when they leave detection_area
 func _on_detection_area_body_exited(body: Node2D) -> void:

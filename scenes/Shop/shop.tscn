@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://c45ymkrlcks1s"]
+[gd_scene load_steps=43 format=4 uid="uid://c45ymkrlcks1s"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_xqmyw"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_sw5c6"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://g3vkevsjrmfj" path="res://scripts/shop/shopnode2d.gd" id="12_44xle"]
 [ext_resource type="PackedScene" uid="uid://c5vdna6q7hwsq" path="res://scenes/Shop/ShopHud.tscn" id="13_j512n"]
 [ext_resource type="Script" uid="uid://uhtwt0t08l1u" path="res://scenes/Shop/teleporter.gd" id="14_5difm"]
+[ext_resource type="Texture2D" uid="uid://bymbdffgrkv2l" path="res://F.png" id="15_xaxl1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_il0eq"]
 texture = ExtResource("1_xqmyw")
@@ -3677,6 +3678,28 @@ radius = 34.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_j512n"]
 radius = 47.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_16jyn"]
+atlas = ExtResource("15_xaxl1")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j3h6"]
+atlas = ExtResource("15_xaxl1")
+region = Rect2(17, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ronn0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16jyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j3h6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="outside2" type="Node2D"]
 
 [node name="tile canister" type="Node2D" parent="."]
@@ -3756,6 +3779,13 @@ collision_mask = 33
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleporter/teleporterDetec"]
 position = Vector2(528, 97)
 shape = SubResource("CircleShape2D_j512n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+position = Vector2(528, 388)
+sprite_frames = SubResource("SpriteFrames_ronn0")
+autoplay = "default"
+frame_progress = 0.575527
 
 [connection signal="body_entered" from="shopnode/Area2D" to="shopnode" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="shopnode/Area2D" to="shopnode" method="_on_area_2d_body_exited"]
