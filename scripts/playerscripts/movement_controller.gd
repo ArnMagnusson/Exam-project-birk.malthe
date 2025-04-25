@@ -5,7 +5,7 @@ extends CharacterBody2D
 #stats
 @export var health = 100
 @export var max_health = 100
-
+@export var heal_speed = 5 #heal speed how much hp heal every frame
 #general stats
 @export var speed = 60
 @export var speed_boost = 1
@@ -36,7 +36,6 @@ func _ready():
 func _process(delta):
 	attack()
 	debugkey()
-	
 	#Directions, left, right, up and down
 	var direction = Vector2(
 		Input.get_axis("left", "right"),
@@ -129,7 +128,6 @@ func take_damage(damage_amount): #callet af fjender
 	
 func Health():#healthregen
 	var target_health = max_health #target health
-	var heal_speed = 10 #heal speed how much hp heal every frame
 	while damage_taken == false and health < max_health: #loop
 		health += heal_speed  * 0.02 #0.02 is to spread it out over frames so its not just instant heal
 		hud.updatehealthbar(health, max_health) #update hud
