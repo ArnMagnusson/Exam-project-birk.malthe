@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://2udqploowfy0" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Plant.png" id="8_gbsqs"]
 [ext_resource type="Texture2D" uid="uid://daujbpeev351y" path="res://Character textures/dungeon_floor.png" id="9_ppgxs"]
 [ext_resource type="Texture2D" uid="uid://bhfm416rnryxr" path="res://Dungeon Free/dungeon_sprite_sheet.png" id="10_ay3yj"]
+[ext_resource type="Script" uid="uid://dpjxhfc43mass" path="res://scenes/bosstele.gd" id="11_6v0ra"]
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="12_gl4p8"]
-[ext_resource type="Script" uid="uid://cgehupw30d8uk" path="res://scenes/teleportercombatroom.gd" id="13_6v0ra"]
 [ext_resource type="PackedScene" uid="uid://hlg2l6xu0ava" path="res://scenes/bossenemy.tscn" id="13_7cw6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wro68"]
@@ -5266,7 +5266,7 @@ tile_set = SubResource("TileSet_47fhq")
 tile_set = SubResource("TileSet_xx8hu")
 
 [node name="teleporter" type="Node2D" parent="."]
-script = ExtResource("13_6v0ra")
+script = ExtResource("11_6v0ra")
 
 [node name="goali" type="Area2D" parent="teleporter"]
 position = Vector2(-305, 319)
@@ -5279,9 +5279,7 @@ shape = SubResource("CircleShape2D_7cw6h")
 [node name="player" parent="." instance=ExtResource("12_gl4p8")]
 position = Vector2(514, 825)
 
-[node name="boss" parent="." instance=ExtResource("13_7cw6h")]
-position = Vector2(511, 544)
-health = 150
-speed = 50
+[node name="CharacterBody2D" parent="." instance=ExtResource("13_7cw6h")]
+position = Vector2(511, 615)
 
 [connection signal="body_shape_entered" from="teleporter/goali" to="teleporter" method="_on_goali_body_shape_entered"]
