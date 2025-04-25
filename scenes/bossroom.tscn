@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bdjqrg3ojv83x"]
+[gd_scene load_steps=48 format=4 uid="uid://bdjqrg3ojv83x"]
 
 [ext_resource type="Texture2D" uid="uid://bahg6toonc82y" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Grass.png" id="1_44eev"]
 [ext_resource type="Texture2D" uid="uid://dp0mt05ouu1wp" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Stone Ground.png" id="2_csjr4"]
@@ -10,10 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://2udqploowfy0" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Plant.png" id="8_gbsqs"]
 [ext_resource type="Texture2D" uid="uid://daujbpeev351y" path="res://Character textures/dungeon_floor.png" id="9_ppgxs"]
 [ext_resource type="Texture2D" uid="uid://bhfm416rnryxr" path="res://Dungeon Free/dungeon_sprite_sheet.png" id="10_ay3yj"]
-[ext_resource type="PackedScene" uid="uid://dq2ffc151d0ey" path="res://ghost.tscn" id="11_csjr4"]
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="12_gl4p8"]
 [ext_resource type="Script" uid="uid://cgehupw30d8uk" path="res://scenes/teleportercombatroom.gd" id="13_6v0ra"]
-[ext_resource type="PackedScene" uid="uid://hlg2l6xu0ava" path="res://scenes/bossenemy.tscn" id="14_7cw6h"]
+[ext_resource type="PackedScene" uid="uid://hlg2l6xu0ava" path="res://scenes/bossenemy.tscn" id="13_7cw6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wro68"]
 texture = ExtResource("1_44eev")
@@ -5266,14 +5265,6 @@ tile_set = SubResource("TileSet_47fhq")
 [node name="foliage" type="TileMapLayer" parent="dungeon/tile canister/floor/walls/shadows/props/lights"]
 tile_set = SubResource("TileSet_xx8hu")
 
-[node name="boss" parent="." instance=ExtResource("11_csjr4")]
-position = Vector2(511, 446)
-scale = Vector2(1.6, 1.6)
-damage = 20
-health = 120
-speed = 0
-gold_reward = 100
-
 [node name="teleporter" type="Node2D" parent="."]
 script = ExtResource("13_6v0ra")
 
@@ -5286,9 +5277,11 @@ position = Vector2(816, 33)
 shape = SubResource("CircleShape2D_7cw6h")
 
 [node name="player" parent="." instance=ExtResource("12_gl4p8")]
-position = Vector2(604, 862)
+position = Vector2(514, 825)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("14_7cw6h")]
-position = Vector2(507, 609)
+[node name="boss" parent="." instance=ExtResource("13_7cw6h")]
+position = Vector2(511, 544)
+health = 150
+speed = 50
 
 [connection signal="body_shape_entered" from="teleporter/goali" to="teleporter" method="_on_goali_body_shape_entered"]
