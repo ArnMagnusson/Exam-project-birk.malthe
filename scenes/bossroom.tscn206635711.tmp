@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dq2ffc151d0ey" path="res://ghost.tscn" id="11_csjr4"]
 [ext_resource type="PackedScene" uid="uid://d4hyd7xdmi2bg" path="res://scenes/player.tscn" id="12_gl4p8"]
 [ext_resource type="Script" uid="uid://cgehupw30d8uk" path="res://scenes/teleportercombatroom.gd" id="13_6v0ra"]
-[ext_resource type="PackedScene" uid="uid://hlg2l6xu0ava" path="res://scenes/bossenemy.tscn" id="14_7cw6h"]
+[ext_resource type="PackedScene" uid="uid://do2pudjiepga1" path="res://scenes/bossenemy.tscn" id="14_7cw6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wro68"]
 texture = ExtResource("1_44eev")
@@ -5274,6 +5274,9 @@ health = 120
 speed = 0
 gold_reward = 100
 
+[node name="CharacterBody2D" parent="." instance=ExtResource("12_gl4p8")]
+position = Vector2(625, 863)
+
 [node name="teleporter" type="Node2D" parent="."]
 script = ExtResource("13_6v0ra")
 
@@ -5285,10 +5288,7 @@ collision_mask = 33
 position = Vector2(816, 33)
 shape = SubResource("CircleShape2D_7cw6h")
 
-[node name="player" parent="." instance=ExtResource("12_gl4p8")]
-position = Vector2(604, 862)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("14_7cw6h")]
-position = Vector2(507, 609)
+[node name="fireboss" parent="." instance=ExtResource("14_7cw6h")]
+position = Vector2(525, 514)
 
 [connection signal="body_shape_entered" from="teleporter/goali" to="teleporter" method="_on_goali_body_shape_entered"]

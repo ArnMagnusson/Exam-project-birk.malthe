@@ -23,6 +23,7 @@ var attacking = false
 @onready var SlashDetect = $WeaponDetection/slashdetection/slashdetectioncolish
 @onready var hud = $HUD
 @export var damage_taken = false
+
 #endregion
 
 func _ready():
